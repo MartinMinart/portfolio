@@ -504,6 +504,41 @@
             text-underline-offset: 4px;
         }
 
+        .project-heading {
+            display: flex;
+            align-items: center;
+            gap: 14px;
+            margin-bottom: 16px;
+        }
+
+        .project-mark {
+            display: grid;
+            place-items: center;
+            flex: 0 0 48px;
+            width: 48px;
+            height: 48px;
+            border: 1px solid var(--border);
+            border-radius: 8px;
+            background: var(--primary-soft);
+            color: var(--primary-dark);
+            font-family: "SFMono-Regular", Consolas, monospace;
+            font-size: 0.88rem;
+            font-weight: 800;
+        }
+
+        .project-mark--trainer {
+            background: #f4ece5;
+            color: #80583f;
+        }
+
+        .project-heading .project-tag {
+            margin-bottom: 4px;
+        }
+
+        .project-heading h3 {
+            margin-bottom: 0;
+        }
+
         .toolkit-grid {
             display: grid;
             grid-template-columns: repeat(2, minmax(0, 1fr));
@@ -1330,6 +1365,17 @@
                     <p>Практические проекты по аналитике данных, SQL, DWH, облачной инфраструктуре, контейнеризации и подготовке аналитиков.</p>
                 </div>
                 <div class="projects-grid">
+                    <article class="project-card project-card-featured">
+                        <div class="project-heading">
+                            <span class="project-mark" aria-hidden="true">WEB</span>
+                            <div>
+                                <span class="project-tag">Единый хаб</span>
+                                <h3>Портфолио и проекты</h3>
+                            </div>
+                        </div>
+                        <p>Ключевые кейсы, результаты и ссылки на исходный код собраны в одном месте.</p>
+                        <a class="project-link" href="https://martinminart.github.io/portfolio/" target="_blank" rel="noopener noreferrer">Открыть портфолио ↗</a>
+                    </article>
                     <article class="project-card">
                         <span class="project-tag">Analytics Engineering</span>
                         <h3>Data portfolio</h3>
@@ -1350,19 +1396,27 @@
                         <a class="project-link" href="https://github.com/MartinMinart/docker-experiments" target="_blank" rel="noopener noreferrer">Открыть репозиторий ↗</a>
                     </article>
                     <article class="project-card project-card-featured">
-                        <span class="project-tag">SQL · Interactive practice</span>
-                        <h3>SQL практикум</h3>
-                        <p>Интерактивный тренажёр по SQL-паттернам: от UPSERT и оконных функций до дедупликации и sessionization.</p>
+                        <div class="project-heading">
+                            <span class="project-mark" aria-hidden="true">SQL</span>
+                            <div>
+                                <span class="project-tag">Подготовка к собеседованию</span>
+                                <h3>SQL практикум</h3>
+                            </div>
+                        </div>
+                        <p>Теория, практика и симулятор собеседования по SQL. Работает в браузере без бэкенда.</p>
+                        <div class="project-proof">SQL-паттерны · Практические задания · Интервью</div>
                         <a class="project-link" href="https://martinminart.github.io/data-sql-trainer/" target="_blank" rel="noopener noreferrer">Открыть тренажёр ↗</a>
                     </article>
                     <article class="project-card project-card-featured">
-                        <span class="project-tag">Подготовка аналитиков</span>
-                        <h3>Data Analyst Trainer</h3>
-                        <p>Тренажёр знаний по SQL, Python, DWH, аналитике, Big Data, инструментам и soft skills.</p>
-                        <ul>
-                            <li>710 вопросов в 63 темах и 11 разделах</li>
-                            <li>Работает локально, без интернета</li>
-                        </ul>
+                        <div class="project-heading">
+                            <span class="project-mark project-mark--trainer" aria-hidden="true">710</span>
+                            <div>
+                                <span class="project-tag">Подготовка аналитиков</span>
+                                <h3>Становись умнее</h3>
+                            </div>
+                        </div>
+                        <p>710 вопросов по SQL, Python, DWH, Big Data, аналитике, инструментам и soft skills. Работает в браузере без сервера.</p>
+                        <div class="project-proof">11 разделов · 63 темы · 710 вопросов</div>
                         <a class="project-link" href="https://martinminart.github.io/data-analyst-trainer/" target="_blank" rel="noopener noreferrer">Открыть тренажёр ↗</a>
                     </article>
                 </div>
