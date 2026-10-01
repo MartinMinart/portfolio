@@ -1,1667 +1,942 @@
 <!DOCTYPE html>
-<html lang="ru">
+<html lang="ru" data-theme="light">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="Портфолио Артура Минина – Data Analyst / Analytics Engineer, SQL, Python, BI, Process Mining, ETL, data quality.">
-    <meta property="og:type" content="website">
-    <meta property="og:url" content="https://martinminart.github.io/portfolio/">
-    <meta property="og:title" content="Артур Минин – Data Analyst / Analytics Engineer">
-    <meta property="og:description" content="Кейсы и проекты по аналитике данных, SQL, Python, BI, DWH и Process Mining. Результаты, инструменты и ссылки на код в одном месте.">
-    <meta name="twitter:card" content="summary">
-    <meta name="twitter:title" content="Артур Минин – Data Analyst / Analytics Engineer">
-    <meta name="twitter:description" content="Кейсы и проекты по аналитике данных, SQL, Python, BI, DWH и Process Mining. Результаты, инструменты и ссылки на код в одном месте.">
-    <meta name="theme-color" content="#176657">
-    <link rel="canonical" href="https://martinminart.github.io/portfolio/">
-    <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='14' fill='%23176657'/%3E%3Ctext x='32' y='46' text-anchor='middle' font-family='Arial,sans-serif' font-size='42' font-weight='700' fill='%23fff'%3EA%3C/text%3E%3C/svg%3E">
-    <title>Артур Минин | Data Analyst / Analytics Engineer</title>
-    <style>
-        :root {
-            --primary: #176657;
-            --primary-dark: #10483e;
-            --primary-soft: #e3f0ec;
-            --bg: #f5f6f3;
-            --card-bg: #ffffff;
-            --text: #18231f;
-            --text-light: #66716c;
-            --border: #dfe5e1;
-            --success: #176657;
-            --accent: #c27c55;
-            --shadow: rgba(24, 35, 31, 0.06);
-            --hero-bg: #edf6f1;
-            --footer-bg: #e8f1ed;
-        }
-
-        * {
-            box-sizing: border-box;
-            margin: 0;
-            padding: 0;
-        }
-
-        html {
-            scroll-behavior: smooth;
-        }
-
-        body {
-            font-family: "DM Sans", "Segoe UI", sans-serif;
-            background: var(--bg);
-            color: var(--text);
-            line-height: 1.6;
-        }
-
-        h1, h2, h3 {
-            font-family: "DM Serif Display", Georgia, serif;
-            font-weight: 400;
-        }
-
-        a {
-            color: inherit;
-        }
-
-        img {
-            max-width: 100%;
-            display: block;
-        }
-
-        .container {
-            max-width: 1100px;
-            margin: 0 auto;
-            padding: 0 20px;
-            width: 100%;
-        }
-
-        header {
-            background: var(--hero-bg);
-            color: var(--text);
-            border-bottom: 1px solid var(--border);
-            padding: 22px 0 68px;
-        }
-
-        .hero {
-            display: grid;
-            grid-template-columns: 1.1fr 0.9fr;
-            gap: 64px;
-            align-items: center;
-            text-align: left;
-            padding-top: 64px;
-        }
-
-        .eyebrow {
-            display: inline-block;
-            background: var(--primary-soft);
-            color: var(--primary-dark);
-            font-size: 0.82rem;
-            font-weight: 700;
-            letter-spacing: 0.08em;
-            text-transform: uppercase;
-            padding: 8px 14px;
-            border-radius: 999px;
-            margin-bottom: 18px;
-        }
-
-        h1 {
-            font-size: 4rem;
-            line-height: 1.1;
-            margin-bottom: 12px;
-        }
-
-        .subtitle {
-            font-size: 1.5rem;
-            color: var(--primary);
-            font-weight: 700;
-            margin-bottom: 18px;
-        }
-
-        .summary {
-            max-width: 640px;
-            margin: 0 0 28px;
-            color: var(--text-light);
-            font-size: 1.08rem;
-        }
-
-        .hero-actions {
-            display: flex;
-            align-items: center;
-            justify-content: flex-start;
-            flex-wrap: wrap;
-            gap: 12px;
-            margin-bottom: 0;
-        }
-
-        .btn {
-            display: inline-block;
-            background: var(--primary);
-            color: #fff;
-            text-decoration: none;
-            padding: 12px 22px;
-            border-radius: 6px;
-            font-weight: 700;
-            transition: 0.2s ease;
-            border: 2px solid var(--primary);
-        }
-
-        .btn:hover {
-            background: var(--primary-dark);
-            border-color: var(--primary-dark);
-        }
-
-        .btn-outline {
-            background: transparent;
-            color: var(--primary);
-        }
-
-        .btn-outline:hover {
-            background: var(--primary);
-            color: white;
-        }
-
-        .hero .btn-outline {
-            color: var(--primary-dark);
-            border-color: var(--primary);
-        }
-
-        .portfolio-hub {
-            max-width: 820px;
-            margin: 0 auto;
-            background: var(--primary-soft);
-            border: 1px solid var(--border);
-            border-radius: 14px;
-            padding: 20px 22px;
-            text-align: left;
-        }
-
-        .portfolio-hub h3 {
-            color: var(--primary-dark);
-            font-size: 1.1rem;
-            margin-bottom: 12px;
-        }
-
-        .portfolio-hub ul {
-            list-style: none;
-            display: grid;
-            gap: 8px;
-        }
-
-        .portfolio-hub li {
-            position: relative;
-            padding-left: 18px;
-            color: var(--text);
-        }
-
-        .portfolio-hub li::before {
-            content: "•";
-            position: absolute;
-            left: 0;
-            color: var(--primary);
-            font-weight: 700;
-        }
-
-        .portfolio-hub a {
-            color: var(--primary);
-            font-weight: 700;
-            text-decoration: none;
-        }
-
-        .portfolio-hub a:hover {
-            text-decoration: underline;
-        }
-
-        .topbar {
-            display: flex;
-            align-items: center;
-            justify-content: space-between;
-            gap: 24px;
-        }
-
-        .brand {
-            color: var(--text);
-            font-weight: 700;
-            text-decoration: none;
-            letter-spacing: 0.02em;
-        }
-
-        .site-nav {
-            display: flex;
-            flex-wrap: wrap;
-            gap: 22px;
-        }
-
-        .site-nav a {
-            color: var(--text-light);
-            text-decoration: none;
-            font-size: 0.88rem;
-        }
-
-        .site-nav a:hover,
-        .site-nav a:focus-visible {
-            color: #fff;
-            text-decoration: underline;
-            text-underline-offset: 4px;
-        }
-
-        section {
-            padding: 72px 0;
-        }
-
-        .section-header {
-            text-align: center;
-            margin-bottom: 32px;
-        }
-
-        .section-header h2 {
-            font-size: 2.5rem;
-            margin-bottom: 10px;
-        }
-
-        .section-header h2::after {
-            content: "";
-            display: block;
-            width: 72px;
-            height: 4px;
-            background: var(--primary);
-            border-radius: 999px;
-            margin: 12px auto 0;
-        }
-
-        .section-header p {
-            color: var(--text-light);
-            max-width: 700px;
-            margin: 0 auto;
-            overflow-wrap: anywhere;
-        }
-
-        .about-grid {
-            display: grid;
-            grid-template-columns: 1.2fr 0.8fr;
-            gap: 28px;
-            align-items: stretch;
-        }
-
-        .card {
-            background: var(--card-bg);
-            border: 1px solid var(--border);
-            border-radius: 16px;
-            padding: 28px;
-            box-shadow: 0 8px 24px var(--shadow);
-        }
-
-        .job,
-        .project-card,
-        .skill-category,
-        .meta-card {
-            border-radius: 8px;
-        }
-
-        .card p {
-            color: var(--text-light);
-            margin-bottom: 14px;
-        }
-
-        .inline-list {
-            display: flex;
-            flex-wrap: wrap;
-            gap: 10px;
-            margin-top: 18px;
-        }
-
-        .chip {
-            background: #f1f5f9;
-            color: var(--text);
-            border: 1px solid var(--border);
-            border-radius: 999px;
-            padding: 6px 12px;
-            font-size: 0.85rem;
-            font-weight: 600;
-        }
-
-        .facts {
-            display: grid;
-            gap: 14px;
-        }
-
-        .fact {
-            background: #f8fafc;
-            border: 1px solid var(--border);
-            border-radius: 12px;
-            padding: 18px;
-        }
-
-        .fact strong {
-            display: block;
-            font-size: 1.35rem;
-            margin-bottom: 6px;
-            color: var(--primary-dark);
-        }
-
-        .experience-list {
-            display: grid;
-            gap: 22px;
-        }
-
-        .job {
-            position: relative;
-            background: var(--card-bg);
-            border: 1px solid var(--border);
-            border-radius: 16px;
-            padding: 26px 24px 24px 26px;
-            box-shadow: 0 8px 24px var(--shadow);
-        }
-
-        .job::before {
-            content: "";
-            position: absolute;
-            left: 18px;
-            top: 24px;
-            bottom: 24px;
-            width: 2px;
-            background: var(--primary);
-        }
-
-        .job-header {
-            position: relative;
-            padding-left: 18px;
-            margin-bottom: 14px;
-        }
-
-        .job-header::before {
-            content: "";
-            position: absolute;
-            left: -8px;
-            top: 10px;
-            width: 12px;
-            height: 12px;
-            background: var(--primary);
-            border-radius: 50%;
-            box-shadow: 0 0 0 4px rgba(23, 102, 87, 0.12);
-        }
-
-        .job-company {
-            font-size: 1.15rem;
-            font-weight: 700;
-            margin-bottom: 4px;
-        }
-
-        .job-role {
-            color: var(--primary);
-            font-weight: 700;
-            margin-bottom: 4px;
-        }
-
-        .job-period {
-            color: var(--text-light);
-            font-size: 0.92rem;
-        }
-
-        .job ul {
-            list-style: none;
-            padding-left: 24px;
-        }
-
-        .job li {
-            position: relative;
-            margin-bottom: 8px;
-            color: var(--text);
-            line-height: 1.6;
-        }
-
-        .job li::before {
-            content: "✓";
-            position: absolute;
-            left: -20px;
-            color: var(--success);
-            font-weight: 700;
-        }
-
-        .achievement {
-            margin-top: 10px;
-            padding-top: 10px;
-            border-top: 1px solid var(--border);
-        }
-
-        .achievement strong {
-            display: block;
-            color: var(--primary-dark);
-            margin-bottom: 8px;
-        }
-
-        .projects-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-            gap: 26px;
-        }
-
-        .project-card {
-            background: var(--card-bg);
-            border: 1px solid var(--border);
-            border-radius: 16px;
-            padding: 26px;
-            box-shadow: 0 8px 24px var(--shadow);
-            transition: transform 0.2s ease, box-shadow 0.2s ease;
-        }
-
-        .project-card:hover {
-            transform: translateY(-5px);
-            box-shadow: 0 18px 36px rgba(15, 23, 42, 0.08);
-        }
-
-        .project-tag {
-            display: inline-block;
-            background: var(--primary-soft);
-            color: var(--primary-dark);
-            border-radius: 999px;
-            padding: 6px 12px;
-            font-size: 0.8rem;
-            font-weight: 700;
-            margin-bottom: 14px;
-        }
-
-        .project-card h3 {
-            font-size: 1.25rem;
-            margin-bottom: 10px;
-        }
-
-        .project-card p {
-            color: var(--text-light);
-            margin-bottom: 14px;
-            overflow-wrap: anywhere;
-        }
-
-        .project-card ul {
-            list-style: none;
-            margin-bottom: 18px;
-        }
-
-        .project-card li {
-            position: relative;
-            padding-left: 20px;
-            margin-bottom: 8px;
-            color: var(--text);
-        }
-
-        .project-card li::before {
-            content: "✓";
-            position: absolute;
-            left: 0;
-            color: var(--primary);
-            font-weight: 700;
-        }
-
-        .tech-stack {
-            display: flex;
-            flex-wrap: wrap;
-            gap: 8px;
-        }
-
-        .tech-badge {
-            background: #f1f5f9;
-            color: var(--text-light);
-            border-radius: 6px;
-            padding: 5px 9px;
-            font-size: 0.78rem;
-            font-family: "SFMono-Regular", Consolas, monospace;
-        }
-
-        .project-link {
-            display: inline-block;
-            color: var(--primary-dark);
-            font-weight: 700;
-            text-decoration: none;
-            margin-top: 10px;
-        }
-
-        .project-link:hover {
-            text-decoration: underline;
-            text-underline-offset: 4px;
-        }
-
-        .project-heading {
-            display: flex;
-            align-items: center;
-            gap: 14px;
-            margin-bottom: 16px;
-        }
-
-        .project-mark {
-            display: grid;
-            place-items: center;
-            flex: 0 0 48px;
-            width: 48px;
-            height: 48px;
-            border: 1px solid var(--border);
-            border-radius: 8px;
-            background: var(--primary-soft);
-            color: var(--primary-dark);
-            font-family: "SFMono-Regular", Consolas, monospace;
-            font-size: 0.88rem;
-            font-weight: 800;
-        }
-
-        .project-mark--trainer {
-            background: #f4ece5;
-            color: #80583f;
-        }
-
-        .project-heading .project-tag {
-            margin-bottom: 4px;
-        }
-
-        .project-heading h3 {
-            margin-bottom: 0;
-        }
-
-        .toolkit-grid {
-            display: grid;
-            grid-template-columns: repeat(2, minmax(0, 1fr));
-            gap: 1px;
-            background: var(--border);
-            border: 1px solid var(--border);
-        }
-
-        .toolkit-card {
-            background: var(--card-bg);
-            padding: 26px;
-        }
-
-        .toolkit-index {
-            color: var(--accent);
-            font-size: 0.78rem;
-            font-weight: 700;
-        }
-
-        .toolkit-card h3 {
-            margin: 8px 0;
-            font-size: 1.28rem;
-        }
-
-        .toolkit-card p,
-        .ai-workflow p {
-            color: var(--text-light);
-            margin-bottom: 14px;
-        }
-
-        .tool-tags {
-            display: flex;
-            flex-wrap: wrap;
-            gap: 7px;
-        }
-
-        .tool-tags span {
-            border-bottom: 1px solid var(--border);
-            padding: 3px 7px;
-            color: var(--text-light);
-            font-size: 0.8rem;
-        }
-
-        .ai-workflow {
-            display: grid;
-            grid-template-columns: 0.8fr 1.2fr;
-            gap: 36px;
-            margin-top: 46px;
-            padding: 32px;
-            background: var(--hero-bg);
-            color: var(--text);
-            border-radius: 8px;
-        }
-
-        .ai-workflow h3 {
-            font-size: 1.6rem;
-            line-height: 1.2;
-            margin: 8px 0 12px;
-        }
-
-        .ai-workflow p {
-            color: var(--text-light);
-            margin: 0;
-        }
-
-        .eyebrow-light {
-            color: #a8c8bb;
-            font-size: 0.75rem;
-            font-weight: 700;
-            letter-spacing: 0.12em;
-            text-transform: uppercase;
-        }
-
-        .ai-tools {
-            display: grid;
-            gap: 18px;
-        }
-
-        .ai-tools div {
-            display: grid;
-            gap: 4px;
-            border-bottom: 1px solid var(--border);
-            padding-bottom: 14px;
-        }
-
-        .ai-tools div:last-child {
-            border-bottom: 0;
-            padding-bottom: 0;
-        }
-
-        .ai-tools strong {
-            color: var(--text);
-            font-size: 0.9rem;
-        }
-
-        .ai-tools span {
-            color: var(--text-light);
-            font-size: 0.9rem;
-            overflow-wrap: anywhere;
-        }
-
-        .skills-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-            gap: 20px;
-        }
-
-        .skill-category {
-            background: var(--card-bg);
-            border: 1px solid var(--border);
-            border-radius: 16px;
-            padding: 24px 20px;
-            text-align: center;
-            box-shadow: 0 8px 24px var(--shadow);
-        }
-
-        .skill-category h3 {
-            margin-bottom: 12px;
-            color: var(--primary-dark);
-        }
-
-        .skill-category ul {
-            list-style: none;
-            display: flex;
-            flex-wrap: wrap;
-            justify-content: center;
-            gap: 8px;
-        }
-
-        .skill-category li {
-            background: #f8fafc;
-            border: 1px solid var(--border);
-            border-radius: 999px;
-            padding: 6px 10px;
-            font-size: 0.78rem;
-            color: var(--text);
-        }
-
-        .verified-skills {
-            grid-column: 1 / -1;
-            display: flex;
-            align-items: center;
-            flex-wrap: wrap;
-            gap: 12px;
-            padding: 18px 20px;
-            background: #e8f0ec;
-            border-left: 3px solid var(--primary);
-        }
-
-        .verified-skills strong {
-            color: var(--primary-dark);
-            margin-right: 4px;
-        }
-
-        .meta-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
-            gap: 22px;
-        }
-
-        .meta-card {
-            background: var(--card-bg);
-            border: 1px solid var(--border);
-            border-radius: 16px;
-            padding: 24px;
-            box-shadow: 0 8px 24px var(--shadow);
-        }
-
-        .meta-card h3 {
-            margin-bottom: 14px;
-            color: var(--primary-dark);
-        }
-
-        .meta-card ul {
-            list-style: none;
-            display: grid;
-            gap: 8px;
-        }
-
-        .meta-card li {
-            color: var(--text-light);
-        }
-
-        .contact-wrap {
-            display: grid;
-            grid-template-columns: 1.1fr 0.9fr;
-            gap: 26px;
-        }
-
-        .contact-list {
-            display: grid;
-            gap: 14px;
-            margin-top: 18px;
-        }
-
-        .contact-item {
-            display: flex;
-            align-items: center;
-            gap: 12px;
-            color: var(--text);
-            font-weight: 600;
-        }
-
-        .contact-item a {
-            color: var(--primary);
-            text-decoration: none;
-        }
-
-        .contact-badge {
-            display: inline-flex;
-            align-items: center;
-            justify-content: center;
-            width: 34px;
-            height: 34px;
-            border-radius: 50%;
-            background: var(--primary-soft);
-            color: var(--primary-dark);
-            font-weight: 700;
-        }
-
-        footer {
-            background: var(--footer-bg);
-            color: var(--text);
-            text-align: center;
-            padding: 28px 20px;
-        }
-
-
-        .hero-proof {
-            display: grid;
-            grid-template-columns: repeat(3, minmax(0, 1fr));
-            gap: 10px;
-            margin: 0 0 26px;
-        }
-
-        .hero-proof span {
-            display: block;
-            background: rgba(255,255,255,0.72);
-            border: 1px solid var(--border);
-            border-radius: 10px;
-            padding: 12px 14px;
-            color: var(--text-light);
-            font-size: 0.86rem;
-            line-height: 1.4;
-        }
-
-        .hero-proof strong {
-            display: block;
-            color: var(--primary-dark);
-            margin-bottom: 3px;
-        }
-
-        .text-link {
-            color: var(--primary-dark);
-            font-weight: 700;
-            text-decoration: none;
-            padding: 12px 8px;
-        }
-
-        .text-link:hover {
-            text-decoration: underline;
-            text-underline-offset: 4px;
-        }
-
-        .evidence-strip {
-            padding: 0 0 8px;
-            background: var(--bg);
-        }
-
-        .evidence-grid {
-            display: grid;
-            grid-template-columns: repeat(4, minmax(0, 1fr));
-            gap: 1px;
-            background: var(--border);
-            border: 1px solid var(--border);
-            border-radius: 16px;
-            overflow: hidden;
-            box-shadow: 0 8px 24px var(--shadow);
-        }
-
-        .evidence-grid > div {
-            background: var(--card-bg);
-            padding: 20px;
-        }
-
-        .evidence-grid strong {
-            display: block;
-            color: var(--primary-dark);
-            font-family: "DM Serif Display", Georgia, serif;
-            font-size: 2rem;
-            font-weight: 400;
-            line-height: 1;
-            margin-bottom: 8px;
-        }
-
-        .evidence-grid span {
-            color: var(--text-light);
-            font-size: 0.86rem;
-        }
-
-        .project-card-featured {
-            border-color: #bfd8cf;
-            box-shadow: 0 12px 30px rgba(23, 102, 87, 0.08);
-        }
-
-        .project-proof {
-            margin: 12px 0 14px;
-            padding: 10px 12px;
-            background: var(--primary-soft);
-            border-left: 3px solid var(--primary);
-            color: var(--primary-dark);
-            font-size: 0.82rem;
-            font-weight: 600;
-        }
-
-        .skill-primary {
-            border-color: #bfd8cf;
-            box-shadow: 0 10px 28px rgba(23, 102, 87, 0.08);
-        }
-
-        @media (max-width: 760px) {
-            .hero-proof {
-                grid-template-columns: 1fr;
-            }
-
-            .evidence-grid {
-                grid-template-columns: repeat(2, minmax(0, 1fr));
-            }
-
-            .text-link {
-                width: 100%;
-                text-align: center;
-            }
-        }
-
-        @media (max-width: 480px) {
-            .evidence-grid {
-                grid-template-columns: 1fr;
-            }
-        }
-
-        @media (max-width: 960px) {
-            .container {
-                padding-right: 24px;
-                padding-left: 24px;
-            }
-
-            .hero {
-                grid-template-columns: minmax(0, 1.1fr) minmax(0, 0.9fr);
-                gap: 32px;
-            }
-
-            .about-grid,
-            .contact-wrap {
-                gap: 20px;
-            }
-
-            .projects-grid {
-                grid-template-columns: repeat(2, minmax(0, 1fr));
-                gap: 20px;
-            }
-
-            .project-card,
-            .job,
-            .card {
-                padding: 22px;
-            }
-        }
-
-        @media (max-width: 760px) {
-            header {
-                padding: 20px 0 52px;
-            }
-
-            .topbar {
-                align-items: flex-start;
-                flex-direction: column;
-            }
-
-            .site-nav {
-                gap: 14px;
-            }
-
-            .hero {
-                grid-template-columns: 1fr;
-                gap: 32px;
-                padding-top: 42px;
-            }
-
-            h1 {
-                font-size: 3.25rem;
-            }
-
-            .subtitle {
-                font-size: 1.3rem;
-            }
-
-            .section-header h2 {
-                font-size: 2rem;
-            }
-
-            .about-grid,
-            .contact-wrap {
-                grid-template-columns: 1fr;
-            }
-
-            .skills-grid {
-                grid-template-columns: repeat(2, minmax(0, 1fr));
-                gap: 14px;
-            }
-
-            .skill-category {
-                padding: 20px 14px;
-            }
-
-            .hero-actions {
-                flex-direction: column;
-            }
-
-            .btn {
-                width: 100%;
-                text-align: center;
-            }
-
-            section {
-                padding: 58px 0;
-            }
-
-            .section-header {
-                text-align: left;
-            }
-
-            .toolkit-grid,
-            .ai-workflow {
-                grid-template-columns: 1fr;
-            }
-
-            .ai-workflow {
-                padding: 24px;
-                gap: 24px;
-            }
-
-            .portfolio-hub {
-                padding: 20px;
-            }
-
-            .portfolio-hub a,
-            .contact-item a {
-                overflow-wrap: anywhere;
-            }
-        }
-
-        @media (max-width: 480px) {
-            .container {
-                padding-right: 16px;
-                padding-left: 16px;
-            }
-
-            header {
-                padding-bottom: 40px;
-            }
-
-            .hero {
-                padding-top: 34px;
-                gap: 26px;
-            }
-
-            h1 {
-                font-size: 2.75rem;
-            }
-
-            .subtitle {
-                font-size: 1.15rem;
-            }
-
-            .summary {
-                font-size: 1rem;
-            }
-
-            .site-nav {
-                column-gap: 12px;
-                row-gap: 8px;
-            }
-
-            .site-nav a {
-                font-size: 0.82rem;
-            }
-
-            section {
-                padding: 48px 0;
-            }
-
-            .section-header h2 {
-                font-size: 1.75rem;
-            }
-
-            .project-card,
-            .job,
-            .card,
-            .meta-card {
-                padding: 18px;
-            }
-
-            .projects-grid,
-            .skills-grid {
-                grid-template-columns: minmax(0, 1fr);
-            }
-
-            .verified-skills {
-                gap: 8px;
-                padding: 14px;
-            }
-
-            .verified-skills strong {
-                width: 100%;
-            }
-
-            .ai-workflow {
-                padding: 18px;
-            }
-
-            .contact-item {
-                min-width: 0;
-            }
-        }
-
-        @media (prefers-reduced-motion: reduce) {
-            html { scroll-behavior: auto; }
-            *, *::before, *::after { transition-duration: 0.01ms !important; }
-        }
-
-
-        .skip-link {
-            position: fixed;
-            left: 16px;
-            top: -60px;
-            z-index: 1000;
-            padding: 10px 14px;
-            background: var(--primary-dark);
-            color: #fff;
-            border-radius: 8px;
-            text-decoration: none;
-            font-weight: 700;
-        }
-
-        .skip-link:focus {
-            top: 16px;
-        }
-
-        :focus-visible {
-            outline: 3px solid var(--accent);
-            outline-offset: 3px;
-        }
-    </style>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="Портфолио Артура Минина — Data Analyst / Analytics Engineer, SQL, Python, BI, DWH, Data Quality, Process Mining.">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://martinminart.github.io/portfolio/">
+<meta property="og:title" content="Артур Минин — Data Analyst / Analytics Engineer">
+<meta property="og:description" content="Кейсы и проекты по аналитике данных, SQL, Python, BI, DWH, Data Quality и Process Mining.">
+<meta name="theme-color" content="#176657">
+<link rel="canonical" href="https://martinminart.github.io/portfolio/">
+<link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='14' fill='%23176657'/%3E%3Ctext x='32' y='46' text-anchor='middle' font-family='Arial,sans-serif' font-size='42' font-weight='700' fill='%23fff'%3EA%3C/text%3E%3C/svg%3E">
+<title>Артур Минин | Data Analyst / Analytics Engineer</title>
+<style>
+:root{
+  --primary:#176657;--primary-dark:#10483e;--primary-soft:#e3f0ec;
+  --bg:#f5f6f3;--card-bg:#fff;--text:#18231f;--text-light:#66716c;
+  --border:#dfe5e1;--accent:#c27c55;--shadow:rgba(24,35,31,.07);
+  --hero-bg:#edf6f1;--footer-bg:#e8f1ed;--chip:#f1f5f9;--input-bg:#fff;
+}
+[data-theme="dark"]{
+  --primary:#69c8ad;--primary-dark:#9ae1ca;--primary-soft:#183a33;
+  --bg:#0f1715;--card-bg:#16211e;--text:#edf5f2;--text-light:#aabbb6;
+  --border:#2a3935;--accent:#e1a27d;--shadow:rgba(0,0,0,.25);
+  --hero-bg:#13251f;--footer-bg:#13211d;--chip:#1d2a27;--input-bg:#16211e;
+}
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth;scroll-padding-top:84px}
+body{font-family:"DM Sans","Segoe UI",sans-serif;background:var(--bg);color:var(--text);line-height:1.6}
+h1,h2,h3{font-family:"DM Serif Display",Georgia,serif;font-weight:400}
+a{color:inherit}
+button{font:inherit}
+.container{max-width:1100px;margin:0 auto;padding:0 20px;width:100%}
+.skip-link{position:fixed;left:16px;top:-60px;z-index:3000;padding:10px 14px;background:var(--primary-dark);color:#fff;border-radius:8px;text-decoration:none;font-weight:700}
+.skip-link:focus{top:16px}
+:focus-visible{outline:3px solid var(--accent);outline-offset:3px}
+
+/* Sticky navigation */
+.site-header{position:sticky;top:0;z-index:2000;background:color-mix(in srgb,var(--bg) 88%,transparent);backdrop-filter:blur(14px);-webkit-backdrop-filter:blur(14px);border-bottom:1px solid var(--border)}
+.topbar{min-height:68px;display:flex;align-items:center;justify-content:space-between;gap:20px}
+.brand{font-weight:800;text-decoration:none;letter-spacing:.04em;white-space:nowrap}
+.nav-right{display:flex;align-items:center;gap:16px}
+.site-nav{display:flex;align-items:center;gap:20px}
+.site-nav a{color:var(--text-light);text-decoration:none;font-size:.88rem;font-weight:600}
+.site-nav a:hover,.site-nav a.active{color:var(--primary);text-decoration:underline;text-underline-offset:5px}
+.nav-resume{display:inline-flex;align-items:center;gap:6px;padding:8px 12px;border:1px solid var(--primary);border-radius:8px;color:var(--primary);text-decoration:none;font-size:.82rem;font-weight:700}
+.nav-controls{display:flex;align-items:center;gap:7px}
+.control-btn{border:1px solid var(--border);background:var(--card-bg);color:var(--text);border-radius:8px;min-width:38px;height:36px;cursor:pointer;font-weight:700}
+.control-btn:hover{border-color:var(--primary);color:var(--primary)}
+.menu-toggle{display:none}
+
+/* Hero */
+.hero-section{position:relative;min-height:calc(100vh - 68px);min-height:calc(100svh - 68px);background:var(--hero-bg);border-bottom:1px solid var(--border);padding:42px 0 64px;display:flex;flex-direction:column}
+.hero{display:grid;grid-template-columns:minmax(0,1.1fr) minmax(0,.9fr);grid-template-rows:repeat(6,auto) minmax(0,1fr);flex:1 1 auto;column-gap:56px;row-gap:0;align-items:start}
+.hero-copy{display:contents}
+.hero-copy>*{min-width:0}
+.hero-copy>.eyebrow{grid-area:1/1;justify-self:start}
+.hero-copy>h1{grid-area:2/1}
+.hero-copy>.subtitle{grid-area:3/1}
+.hero-copy>.summary{grid-area:4/1}
+.hero-copy>.hero-proof{grid-area:5/1}
+.hero-copy>.hero-actions{grid-area:6/1}
+.portfolio-hub{min-width:0}
+.eyebrow{display:inline-block;background:var(--primary-soft);color:var(--primary-dark);font-size:.78rem;font-weight:800;letter-spacing:.08em;text-transform:uppercase;padding:8px 13px;border-radius:999px;margin-bottom:18px}
+h1{font-size:4rem;line-height:1.08;margin-bottom:12px}
+.subtitle{font-size:1.45rem;color:var(--primary);font-weight:800;margin-bottom:18px}
+.summary{max-width:650px;margin-bottom:26px;color:var(--text-light);font-size:1.08rem}
+.hero-scroll{position:absolute;left:50%;bottom:12px;display:flex;align-items:center;justify-content:center;gap:8px;width:fit-content;max-width:220px;margin:0;padding:6px 12px;border:1px solid var(--border);border-radius:999px;background:rgba(255,255,255,.18);color:var(--text-light);font-size:.72rem;font-weight:700;letter-spacing:.12em;text-transform:uppercase;box-shadow:0 0 0 1px rgba(23,102,87,.04);transform:translateX(-50%)}
+.hero-scroll:before{content:"↓";font-size:.9rem;color:var(--primary);animation:scroll-nudge 1.4s ease-in-out infinite}
+@keyframes scroll-nudge{0%,100%{transform:translateY(-2px);opacity:.72}50%{transform:translateY(3px);opacity:1}}
+.hero-proof{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:10px;margin-bottom:26px}
+.hero-proof>span{display:flex;flex-direction:column;justify-content:center;background:var(--card-bg);border:1px solid color-mix(in srgb,var(--primary) 18%,var(--border));border-radius:10px;padding:12px 14px;color:var(--text-light);font-size:.84rem;line-height:1.4;min-height:80px;word-break:break-word;overflow-wrap:anywhere;box-shadow:0 8px 22px color-mix(in srgb,var(--primary) 8%,transparent);transition:transform .2s ease,border-color .2s ease,box-shadow .2s ease}
+.hero-proof>span:hover{transform:translateY(-3px);border-color:color-mix(in srgb,var(--primary) 48%,var(--border));box-shadow:0 12px 26px color-mix(in srgb,var(--primary) 13%,transparent)}
+  .hero-proof strong{display:block;color:var(--primary-dark);font-size:1.02rem;line-height:1.3;margin-bottom:5px;white-space:nowrap;word-break:normal}
+.hero-proof>span>span{color:var(--text-light);font-size:.8rem}
+@media(min-width:1101px){
+  .hero-proof{grid-template-columns:minmax(0,1fr) minmax(0,1fr) minmax(210px,1.3fr)}
+  .hero-proof>span:nth-child(3){padding-left:12px;padding-right:12px}
+  .hero-proof>span:nth-child(3) strong{font-size:.94rem;white-space:nowrap}
+}
+@media(min-width:761px) and (max-width:1100px){
+  .hero-proof{grid-template-columns:minmax(0,.8fr) minmax(0,.8fr) minmax(0,1.5fr)}
+  .hero-proof>span:nth-child(3){padding-left:10px;padding-right:10px}
+  .hero-proof>span:nth-child(3) strong{font-size:.76rem;white-space:nowrap}
+}
+.hero-actions{display:flex;align-items:center;flex-wrap:wrap;gap:10px}
+.btn{display:inline-block;background:var(--primary);color:#fff;text-decoration:none;padding:11px 20px;border-radius:7px;font-weight:800;border:2px solid var(--primary);transition:.2s ease}
+.btn:hover{background:var(--primary-dark);border-color:var(--primary-dark)}
+.btn-outline{background:transparent;color:var(--primary)}
+.btn-outline:hover{background:var(--primary);color:#fff}
+.text-link{color:var(--primary-dark);font-weight:800;text-decoration:none;padding:11px 8px}
+.text-link:hover{text-decoration:underline;text-underline-offset:4px}
+.portfolio-hub{
+    grid-area:5 / 2 / 7 / 3;
+    align-self:start;
+    height:168px;
+    display:flex;
+    flex-direction:column;
+    justify-content:flex-start;
+    background:var(--primary-soft);
+    border:1px solid var(--border);
+    border-radius:16px;
+    padding:7px 28px 14px;
+    overflow:hidden;
+}
+
+.portfolio-hub h3{
+    font-size:1.55rem;
+    color:var(--primary-dark);
+    margin:0 0 4px;
+    line-height:1.15;
+}
+
+.portfolio-hub ul{
+    list-style:none;
+    display:grid;
+    gap:7px;
+    margin:0;
+    padding:0;
+}
+
+.portfolio-hub li{
+    position:relative;
+    display:flex;
+    align-items:baseline;
+    gap:8px;
+    padding-left:22px;
+    font-size:1rem;
+    line-height:1.45;
+    white-space:nowrap;
+}
+.portfolio-hub h3{font-size:1.55rem;color:var(--primary-dark);margin-bottom:18px}
+.portfolio-hub ul{list-style:none;display:grid;gap:13px}
+.portfolio-hub li{position:relative;display:flex;align-items:baseline;gap:8px;padding-left:22px;font-size:1rem;line-height:1.45;white-space:nowrap}
+.portfolio-hub li>span,.portfolio-hub li>a{flex:0 0 auto;white-space:nowrap}
+.portfolio-hub li:before{content:"•";position:absolute;left:0;color:var(--primary);font-weight:900}
+.portfolio-hub a{color:var(--primary);font-weight:700;text-decoration:none;white-space:nowrap}
+.portfolio-hub a:hover{text-decoration:underline}
+
+/* General */
+section{padding:72px 0}
+.section-header{text-align:center;margin-bottom:32px}
+.section-header h2{font-size:2.5rem;margin-bottom:10px}
+.section-header h2:after{content:"";display:block;width:72px;height:4px;background:var(--primary);border-radius:999px;margin:12px auto 0}
+.section-header p{color:var(--text-light);max-width:720px;margin:0 auto}
+.card,.job,.project-card,.skill-category,.meta-card{background:var(--card-bg);border:1px solid var(--border);border-radius:16px;box-shadow:0 8px 24px var(--shadow)}
+.card{padding:28px}
+.card p{color:var(--text-light);margin-bottom:14px}
+.about-grid{display:grid;grid-template-columns:1.2fr .8fr;gap:28px}
+.inline-list,.tech-stack,.tool-tags{display:flex;flex-wrap:wrap;gap:8px}
+.inline-list{margin-top:18px}
+.chip{background:var(--chip);color:var(--text);border:1px solid var(--border);border-radius:999px;padding:6px 11px;font-size:.82rem;font-weight:700}
+.facts{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:14px}
+.fact{background:var(--card-bg);border:1px solid var(--border);border-radius:12px;padding:18px;display:flex;flex-direction:column;justify-content:center;min-height:120px}
+.fact strong{display:block;font-size:1.1rem;color:var(--primary-dark);margin-bottom:5px;line-height:1.35}
+.fact{color:var(--text-light);line-height:1.6}
+.evidence-strip{padding:0 0 8px}
+.evidence-grid{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:1px;background:var(--border);border:1px solid var(--border);border-radius:16px;overflow:hidden;box-shadow:0 8px 24px var(--shadow)}
+.evidence-grid>div{background:var(--card-bg);padding:20px}
+.evidence-grid strong{display:block;color:var(--primary-dark);font-family:"DM Serif Display",Georgia,serif;font-size:2rem;font-weight:400;line-height:1.05;margin-bottom:8px}
+.evidence-grid span{color:var(--text-light);font-size:.86rem}
+
+/* Experience */
+.experience-list{display:grid;gap:22px}
+.job{position:relative;padding:26px 24px 24px 36px}
+.job:before{content:"";position:absolute;left:18px;top:24px;bottom:24px;width:2px;background:var(--primary)}
+.job-header{position:relative;padding-left:30px;margin-bottom:14px}
+.job-header:before{content:"";position:absolute;left:8px;top:10px;z-index:1;width:12px;height:12px;background:var(--primary);border-radius:50%;box-shadow:0 0 0 4px color-mix(in srgb,var(--primary) 14%,transparent)}
+.job-header:after{content:"";position:absolute;left:-18px;top:15px;width:26px;height:2px;background:var(--primary)}
+.job-company{font-size:1.12rem;font-weight:800;margin-bottom:4px}
+.job-role{color:var(--primary);font-weight:800;margin-bottom:4px}
+.job-period{color:var(--text-light);font-size:.92rem}
+.job ul{list-style:none;padding-left:24px}
+.job li{position:relative;margin-bottom:8px}
+.job li:before{content:"✓";position:absolute;left:-20px;color:var(--primary);font-weight:800}
+.achievement{margin-top:10px;padding-top:10px;border-top:1px solid var(--border)}
+.achievement>strong{display:block;color:var(--primary-dark);margin-bottom:8px}
+
+/* Projects/cases */
+.projects-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:24px}
+.project-card{padding:26px;transition:transform .2s ease,box-shadow .2s ease}
+.project-card:hover{transform:translateY(-4px);box-shadow:0 18px 36px var(--shadow)}
+.project-card-featured{border-color:color-mix(in srgb,var(--primary) 40%,var(--border));box-shadow:0 12px 30px color-mix(in srgb,var(--primary) 8%,transparent)}
+.project-tag{display:inline-block;background:var(--primary-soft);color:var(--primary-dark);border-radius:999px;padding:6px 11px;font-size:.78rem;font-weight:800;margin-bottom:13px}
+.project-card h3{font-size:1.28rem;margin-bottom:10px}
+.project-card p{color:var(--text-light);margin-bottom:14px}
+.project-card ul{list-style:none;margin-bottom:16px}
+.project-card li{position:relative;padding-left:20px;margin-bottom:8px}
+.project-card li:before{content:"✓";position:absolute;left:0;color:var(--primary);font-weight:800}
+.case-outcome{margin:14px 0 16px;padding:13px 15px;background:var(--primary-soft);border-left:3px solid var(--primary);border-radius:0 8px 8px 0}
+.case-outcome span{display:block;margin-bottom:4px;color:var(--primary);font-size:.7rem;font-weight:800;letter-spacing:.08em;text-transform:uppercase}
+.case-outcome strong{display:block;color:var(--primary-dark);font-size:.92rem;line-height:1.45}
+.tech-badge{background:var(--chip);color:var(--text-light);border-radius:6px;padding:5px 9px;font-size:.76rem;font-family:"SFMono-Regular",Consolas,monospace}
+.project-link{display:inline-block;color:var(--primary-dark);font-weight:800;text-decoration:none;margin-top:11px}
+.project-link:hover{text-decoration:underline;text-underline-offset:4px}
+.project-proof{margin:12px 0 14px;padding:10px 12px;background:var(--primary-soft);border-left:3px solid var(--primary);color:var(--primary-dark);font-size:.82rem;font-weight:700}
+.project-heading{display:flex;align-items:center;gap:14px;margin-bottom:16px}
+.project-mark{display:grid;place-items:center;flex:0 0 48px;width:48px;height:48px;border:1px solid var(--border);border-radius:8px;background:var(--primary-soft);color:var(--primary-dark);font-family:monospace;font-weight:800}
+.project-mark--trainer{background:#f4ece5;color:#80583f}
+.project-heading .project-tag{margin-bottom:4px}
+.project-heading h3{margin-bottom:0}
+
+/* Skills */
+.skills-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:20px}
+.skill-category{padding:24px 20px;text-align:center}
+.skill-category h3{margin-bottom:12px;color:var(--primary-dark)}
+.skill-category ul{list-style:none;display:flex;flex-wrap:wrap;justify-content:center;gap:8px}
+.skill-category li{background:var(--chip);border:1px solid var(--border);border-radius:999px;padding:6px 10px;font-size:.78rem}
+.skill-primary{border-color:color-mix(in srgb,var(--primary) 40%,var(--border))}
+.verified-skills{grid-column:1/-1;display:flex;align-items:center;flex-wrap:wrap;gap:10px;padding:18px 20px;background:var(--primary-soft);border-left:3px solid var(--primary)}
+.verified-skills strong{color:var(--primary-dark);margin-right:4px}
+
+/* Toolkit */
+.toolkit-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:1px;background:var(--border);border:1px solid var(--border)}
+.toolkit-card{background:var(--card-bg);padding:26px}
+.toolkit-index{color:var(--accent);font-size:.78rem;font-weight:800}
+.toolkit-card h3{margin:8px 0;font-size:1.28rem}
+.toolkit-card p,.ai-workflow p{color:var(--text-light);margin-bottom:14px}
+.tool-tags span{border-bottom:1px solid var(--border);padding:3px 7px;color:var(--text-light);font-size:.8rem}
+.ai-workflow{display:grid;grid-template-columns:.8fr 1.2fr;gap:36px;margin-top:46px;padding:32px;background:var(--hero-bg);border:1px solid var(--border);border-radius:16px}
+.ai-workflow h3{font-size:1.6rem;line-height:1.2;margin:8px 0 12px}
+.eyebrow-light{color:var(--primary);font-size:.75rem;font-weight:800;letter-spacing:.12em;text-transform:uppercase}
+.ai-tools{display:grid;gap:18px}
+.ai-tools div{display:grid;gap:4px;border-bottom:1px solid var(--border);padding-bottom:14px}
+.ai-tools div:last-child{border-bottom:0;padding-bottom:0}
+.ai-tools strong{font-size:.9rem}
+.ai-tools span{color:var(--text-light);font-size:.9rem}
+
+/* Education/contact */
+.meta-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:22px}
+.meta-card{padding:24px}
+.meta-card h3{margin-bottom:14px;color:var(--primary-dark)}
+.meta-card ul{list-style:none;display:grid;gap:8px}
+.meta-card li{color:var(--text-light)}
+.contact-wrap{display:grid;grid-template-columns:1.1fr .9fr;gap:26px}
+.contact-list{display:grid;gap:14px;margin-top:18px}
+.contact-item{display:flex;align-items:center;gap:12px;font-weight:700}
+.contact-item a{color:var(--primary);text-decoration:none}
+.contact-badge{display:inline-flex;align-items:center;justify-content:center;width:34px;height:34px;border-radius:50%;background:var(--primary-soft);color:var(--primary-dark);font-weight:800}
+.contact-actions{display:flex;flex-wrap:wrap;gap:10px;margin-top:22px}
+.final-cta{background:var(--hero-bg);border-top:1px solid var(--border);border-bottom:1px solid var(--border)}
+.final-cta .section-header{margin-bottom:0}
+.final-cta .section-header p{margin-top:12px}
+footer{background:var(--footer-bg);color:var(--text);text-align:center;padding:28px 20px}
+
+/* Mobile menu */
+.mobile-menu{display:none}
+body.menu-open{overflow:hidden}
+
+/* Responsive */
+@media(max-width:960px){
+  .hero{
+    grid-template-columns:minmax(0,1fr);
+    column-gap:32px;
+    row-gap:0;
+  }
+
+  .portfolio-hub{
+    grid-area:auto/1/auto/2;
+    align-self:auto;
+    width:100%;
+    height:auto;
+    min-height:0;
+    padding:24px 20px;
+    overflow:visible;
+  }
+
+  .about-grid,.contact-wrap{
+    gap:20px;
+  }
+
+  .projects-grid{
+    grid-template-columns:repeat(2,minmax(0,1fr));
+  }
+}
+@media(max-width:760px){
+  .topbar{min-height:62px}
+  .nav-right{gap:8px}
+  .site-nav{display:none}
+  .nav-resume{display:none}
+  .menu-toggle{display:inline-flex;align-items:center;justify-content:center;border:1px solid var(--border);background:var(--card-bg);color:var(--text);border-radius:8px;width:38px;height:36px;cursor:pointer}
+  .hero-section{padding:54px 0 52px}
+  .hero{grid-template-columns:1fr;column-gap:32px;row-gap:0}
+  h1{font-size:3.25rem}
+  .subtitle{font-size:1.3rem}
+  .hero-proof{grid-template-columns:1fr}
+  .hero-actions{flex-direction:column;align-items:stretch}
+  .hero-actions .btn,.hero-actions .text-link{text-align:center;width:100%}
+  .evidence-grid{grid-template-columns:repeat(2,minmax(0,1fr))}
+  .about-grid,.contact-wrap,.toolkit-grid,.ai-workflow{grid-template-columns:1fr}
+  .projects-grid{grid-template-columns:1fr}
+  .skills-grid{grid-template-columns:repeat(2,minmax(0,1fr))}
+  .section-header{text-align:left}
+  .section-header h2:after{margin-left:0}
+  section{padding:58px 0}
+  .mobile-menu{position:fixed;inset:62px 0 auto 0;z-index:1900;background:var(--bg);border-bottom:1px solid var(--border);box-shadow:0 16px 30px var(--shadow);padding:18px 20px}
+  .mobile-menu.open{display:grid;gap:4px}
+  .mobile-menu a{padding:12px 10px;border-radius:8px;text-decoration:none;font-weight:700;color:var(--text)}
+  .mobile-menu a:hover{background:var(--primary-soft);color:var(--primary)}
+  .mobile-menu a:hover{
+    background:var(--primary-soft);
+    color:var(--primary)
+  }
+
+  /* Карточка «Избранные репозитории» на телефоне:
+     убираем desktop-фиксированную высоту и позволяем ей
+     увеличиваться по содержимому */
+  .portfolio-hub{
+    grid-area:auto;
+    align-self:auto;
+    width:100%;
+    height:auto;
+    min-height:0;
+    padding:24px 20px;
+    overflow:visible;
+  }
+
+  .portfolio-hub h3{
+    margin:0 0 10px;
+    font-size:1.35rem;
+    line-height:1.2;
+  }
+
+  .portfolio-hub ul{
+    gap:10px;
+    margin:0;
+    padding:0;
+  }
+
+  .portfolio-hub li{
+    white-space:normal;
+    flex-wrap:wrap;
+  }
+}
+@media(max-width:480px){
+  .container{padding-left:16px;padding-right:16px}
+  h1{font-size:2.75rem}
+  .subtitle{font-size:1.15rem}
+  .summary{font-size:1rem}
+  .portfolio-hub li{font-size:.9rem}
+  .evidence-grid,.skills-grid{grid-template-columns:1fr}
+  .site-header .container{padding-left:16px;padding-right:16px}
+}
+@media(max-width:380px){
+  .portfolio-hub li{display:grid;gap:2px;white-space:normal}
+  .portfolio-hub li>a{justify-self:start}
+}
+@media(prefers-reduced-motion:reduce){
+  html{scroll-behavior:auto}
+  *,*::before,*::after{transition-duration:.01ms!important;animation-duration:.01ms!important;animation-iteration-count:1!important}
+}
+</style>
 </head>
+
 <body>
-    <a class="skip-link" href="#main">Перейти к содержимому</a>
-    <header>
-        <div class="container">
-            <nav class="topbar" aria-label="Основная навигация">
-                <a class="brand" href="#top">АРТУР МИНИН</a>
-                <div class="site-nav">
-                    <a href="#cases">Кейсы</a>
-                    <a href="#projects">Проекты</a>
-                    <a href="#toolkit">Инструменты</a>
-                    <a href="#contacts">Контакты</a>
-                </div>
-            </nav>
+<a class="skip-link" href="#main" data-i18n="skip">Перейти к содержимому</a>
+
+<header class="site-header">
+  <div class="container topbar">
+    <a class="brand" href="#top" data-i18n="brandName">АРТУР МИНИН</a>
+    <div class="nav-right">
+      <nav class="site-nav" aria-label="Основная навигация">
+        <a href="#about" data-nav="about" data-i18n="navAbout">Обо мне</a>
+        <a href="#cases" data-nav="cases" data-i18n="navCases">Кейсы</a>
+        <a href="#projects" data-nav="projects" data-i18n="navProjects">Проекты</a>
+        <a href="#skills" data-nav="skills" data-i18n="navSkills">Стек</a>
+        <a href="#contacts" data-nav="contacts" data-i18n="navContacts">Контакты</a>
+      </nav>
+      <a class="nav-resume" href="https://drive.google.com/file/d/1JkIpSLRhYlpFip-zRDEx1RoeUZy9_zMZ/view" target="_blank" rel="noopener noreferrer" data-i18n="resumeShort">Резюме ↗</a>
+      <div class="nav-controls">
+        <button class="control-btn" id="langToggle" type="button" aria-label="Switch language">EN</button>
+        <button class="control-btn" id="themeToggle" type="button" aria-label="Toggle theme">☾</button>
+        <button class="menu-toggle" id="menuToggle" type="button" aria-label="Open menu" aria-expanded="false">☰</button>
+      </div>
+    </div>
+  </div>
+  <nav class="mobile-menu" id="mobileMenu" aria-label="Мобильная навигация" data-i18n-aria-label="mobileNavLabel">
+    <a href="#about" data-i18n="navAbout">Обо мне</a>
+    <a href="#cases" data-i18n="navCases">Кейсы</a>
+    <a href="#projects" data-i18n="navProjects">Проекты</a>
+    <a href="#skills" data-i18n="navSkills">Стек</a>
+    <a href="#contacts" data-i18n="navContacts">Контакты</a>
+    <a href="https://drive.google.com/file/d/1JkIpSLRhYlpFip-zRDEx1RoeUZy9_zMZ/view" target="_blank" rel="noopener noreferrer" data-i18n="resumeShort">Резюме ↗</a>
+  </nav>
+</header>
+
+<header class="hero-section" id="top">
+  <div class="container hero">
+    <div class="hero-copy">
+      <div class="eyebrow" data-i18n="role">Data Analyst · Analytics Engineer</div>
+      <h1 data-i18n="personName">Артур Минин</h1>
+      <div class="subtitle" data-i18n="heroStack">Помогаю находить точки роста через данные, процессы и BI</div>
+      <p class="summary" data-i18n="heroSummary">Аналитик данных на стыке аналитики, процессов и IT. Извлекаю, очищаю и анализирую данные, строю витрины и дашборды. Автоматизирую проверки и выстраиваю data-driven-подход с помощью SQL, Python, BI и Process Mining.</p>
+      <div class="hero-proof">
+        <span><strong data-i18n="heroProof1Strong">3+ года</strong><span data-i18n="heroProof1Text">Data Analyst / Бизнес-аналитик</span></span>
+        <span><strong data-i18n="heroProof2Strong">10+ лет</strong><span data-i18n="heroProof2Text">профессионального опыта</span></span>
+        <span><strong data-i18n="heroProof3Strong">SQL · Python · BI · DWH</strong><span data-i18n="heroProof3Text">Основной стек постоянно расширяется и углубляется</span></span>
+      </div>
+      <div class="hero-actions">
+        <a class="btn btn-outline" href="#experience" data-i18n="experienceLink">Опыт работы</a>
+        <a class="btn" href="#cases" data-i18n="viewCases">Смотреть кейсы</a>
+        <a class="btn btn-outline" href="https://drive.google.com/file/d/1JkIpSLRhYlpFip-zRDEx1RoeUZy9_zMZ/view" target="_blank" rel="noopener noreferrer" data-i18n="resumePdf">Резюме PDF ↗</a>
+      </div>
+    </div>
+    <div class="portfolio-hub">
+      <h3 data-i18n="featuredRepos">Избранные репозитории</h3>
+      <ul>
+        <li><span data-i18n="repoData">Data-проекты:</span> <a href="https://github.com/MartinMinart/data-portfolio" target="_blank" rel="noopener noreferrer">data-portfolio ↗</a></li>
+        <li><span data-i18n="repoCloud">Облако:</span> <a href="https://github.com/MartinMinart/cloud-infrastructure-project" target="_blank" rel="noopener noreferrer">cloud-infrastructure-project ↗</a></li>
+        <li><span data-i18n="repoDocker">Docker:</span> <a href="https://github.com/MartinMinart/docker-experiments" target="_blank" rel="noopener noreferrer">docker-experiments ↗</a></li>
+      </ul>
+    </div>
+    <div class="hero-scroll" data-i18n="scroll">scroll</div>
+  </div>
+</header>
+
+<main id="main">
+
+<section id="about">
+  <div class="container">
+    <div class="section-header"><h2 data-i18n="aboutTitle">Обо мне</h2></div>
+    <div class="about-grid">
+      <div class="card">
+        <p data-i18n="aboutP1">Работаю с SQL и Python: извлекаю, очищаю и анализирую данные, провожу исследовательский анализ, проверяю качество данных и бизнес-логику витрин. Создаю аналитические витрины и интерактивные дашборды в Power BI, Tableau и Metabase.</p>
+        <p data-i18n="aboutP2">Имею практический опыт анализа событийных логов и Process Mining: выявляю узкие места, моделирую процессы и помогаю находить точки для улучшения. Сочетаю техническую аналитику с опытом управления проектами и инженерии: собираю и формализую требования, перевожу бизнес-задачи в метрики, аналитические решения и задачи для Data Engineering.</p>
+        <div class="inline-list">
+          <span class="chip">SQL</span><span class="chip">Python</span><span class="chip">Data Quality</span><span class="chip">BI</span><span class="chip">Process Mining</span><span class="chip">ETL/ELT</span><span class="chip">DWH</span><span class="chip">Airflow</span><span class="chip">dbt</span><span class="chip">Docker</span>
         </div>
-        <div class="container hero" id="top">
-            <div class="hero-copy">
-                <div class="eyebrow">Data Analyst · Analytics Engineer</div>
-                <h1>Артур Минин</h1>
-                <div class="subtitle">SQL · Python · BI · DWH · ETL · Data Quality</div>
-                <p class="summary">
-                    Аналитик данных с инженерным бэкграундом и MBA. Работаю с данными от выгрузки и очистки
-                    до витрин, дашбордов и контроля качества.
-                </p>
-                <div class="hero-proof">
-                    <span><strong>3+ года</strong> Data Analyst / Бизнес-аналитик</span>
-                    <span><strong>10+ лет</strong> профессионального опыта</span>
-                    <span><strong>SQL · Python · BI · DWH</strong> основной стек</span>
-                </div>
-                <div class="hero-actions">
-                    <a class="btn" href="#projects">Смотреть проекты</a>
-                    <a class="btn btn-outline" href="#contacts">Связаться</a>
-                    <a class="text-link" href="https://github.com/MartinMinart" target="_blank" rel="noopener noreferrer">GitHub ↗</a>
-                </div>
-            </div>
-            <div class="portfolio-hub">
-                <h3>Избранные репозитории</h3>
-                <ul>
-                    <li>Data-проекты: <a href="https://github.com/MartinMinart/data-portfolio" target="_blank" rel="noopener noreferrer">GitHub / data-portfolio ↗</a></li>
-                    <li>Облачная инфраструктура: <a href="https://github.com/MartinMinart/cloud-infrastructure-project" target="_blank" rel="noopener noreferrer">GitHub / cloud-infrastructure-project ↗</a></li>
-                    <li>Контейнеризация: <a href="https://github.com/MartinMinart/docker-experiments" target="_blank" rel="noopener noreferrer">GitHub / docker-experiments ↗</a></li>
-                </ul>
-            </div>
+      </div>
+      <div class="facts">
+        <div class="fact"><strong data-i18n="aboutFact1Title">Техническая аналитика</strong><span data-i18n="aboutFact1Text">SQL, Python, Data Quality, витрины и BI-дашборды.</span></div>
+        <div class="fact"><strong data-i18n="aboutFact2Title">Анализ процессов</strong><span data-i18n="aboutFact2Text">Process Mining, BPMN, AS-IS / TO-BE, поиск узких мест.</span></div>
+        <div class="fact"><strong data-i18n="aboutFact3Title">Связь бизнеса и IT</strong><span data-i18n="aboutFact3Text">Требования, метрики, постановка задач и коммуникация с командами.</span></div>
+        <div class="fact"><strong data-i18n="aboutFact4Title">Analytics Engineering</strong><span data-i18n="aboutFact4Text">PostgreSQL, ClickHouse, Airflow, dbt, Docker и DWH-подход.</span></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="evidence-strip" aria-label="Key results" data-i18n-aria-label="evidenceLabel">
+  <div class="container">
+    <div class="evidence-grid">
+      <div><strong>500+</strong><span data-i18n="ev1">сотрудников в кейсе корпоративного портала</span></div>
+      <div><strong>400+</strong><span data-i18n="ev2">SAP HCM z-транзакций проверено</span></div>
+      <div><strong>20+</strong><span data-i18n="ev3">узких мест выявлено в процессе согласования</span></div>
+      <div><strong data-i18n="evMetric4">3–4 ч</strong><span data-i18n="ev4">время анализа вместо нескольких дней</span></div>
+    </div>
+  </div>
+</section>
+
+<section id="experience">
+  <div class="container">
+    <div class="section-header"><h2 data-i18n="experienceTitle">Опыт работы</h2></div>
+    <div class="experience-list">
+
+      <article class="job">
+        <div class="job-header">
+          <div class="job-company" data-i18n="job1Company">ООО «Норникель Спутник», АО «Желдорреммаш», Москва</div>
+          <div class="job-role" data-i18n="job1Role">Data Analyst / Бизнес-аналитик</div>
+          <div class="job-period" data-i18n="job1Period">09.2024 – 02.2026 · 1 год 6 мес.</div>
         </div>
-    </header>
+        <ul>
+          <li data-i18n="job1a">ETL: извлечение, очистка и трансформация данных из внутренних источников (SQL, Python/Pandas), поиск аномалий и инсайтов</li>
+          <li data-i18n="job1b">Контроль качества данных (Data Quality), валидация бизнес-логики витрин</li>
+          <li data-i18n="job1c">Дашборды в Power BI / Tableau / Metabase для разных уровней управления</li>
+          <li data-i18n="job1d">Process Mining: анализ событийных логов и выявление отклонений</li>
+        </ul>
+        <div class="achievement">
+          <strong data-i18n="achievements">Достижения:</strong>
+          <ul>
+            <li data-i18n="job1e">Спроектировал дашборд метрик корпоративного портала на основе Process Mining.</li>
+            <li data-i18n="job1f">Проверил использование SAP HCM z-транзакций на Python и подготовил данные для решений по оптимизации.</li>
+            <li data-i18n="job1h">Автоматизировал анализ событийных логов нескольких систем, сделав повторные проверки воспроизводимыми.</li>
+          </ul>
+        </div>
+      </article>
 
-    <main id="main">
-        <section id="about">
-            <div class="container">
-                <div class="section-header">
-                    <h2>О себе</h2>
-                </div>
+      <article class="job">
+        <div class="job-header">
+          <div class="job-company" data-i18n="job2Company">АО «ММК Мосинтраст», Москва</div>
+          <div class="job-role" data-i18n="job2Role">Руководитель проектов</div>
+          <div class="job-period" data-i18n="job2Period">04.2022 – 09.2024 · 2 года 6 мес.</div>
+        </div>
+        <ul>
+          <li data-i18n="job2a">Управление проектами капитального строительства и ремонта: от ТЗ до сдачи, координация с заказчиками и подрядчиками</li>
+          <li data-i18n="job2b">Анализ бизнес-процессов, подготовка ТЗ, бюджетов, графиков, карт рисков; стандартизация процессов</li>
+        </ul>
+        <div class="achievement">
+          <strong data-i18n="achievements">Достижения:</strong>
+          <ul>
+            <li data-i18n="job2c">Внедрил модуль 1С-Битрикс24 для подбора персонала и сократил время подбора ресурсов на 20%.</li>
+            <li data-i18n="job2d">Разработал единый реестр сроков, бюджетов и рисков. Более 20 проектов завершены в срок и в рамках бюджета.</li>
+            <li data-i18n="job2e">На основе анализа данных об адаптации оптимизировал онбординг и сократил срок выхода на продуктивность на 30%.</li>
+          </ul>
+        </div>
+      </article>
 
-                <div class="about-grid">
-                    <div class="card">
-                        <p>
-                            Data Analyst / Analytics Engineer с опытом работы с SQL (CTE, оконные функции),
-                            Python (Pandas, NumPy) и BI (Power BI, Tableau, Metabase, Superset). Проверяю
-                            качество данных и бизнес-логику витрин.
-                        </p>
-                        <p>
-                            Проектирую слои ODS/DDS/Datamart и витрины для разных уровней управления. Использую
-                            Process Mining в рабочих кейсах; Docker, Kubernetes, Airflow и dbt – в практических
-                            проектах. Применяю prompt engineering и AI-инструменты для анализа данных и разработки скриптов.
-                        </p>
+      <article class="job">
+        <div class="job-header">
+          <div class="job-company" data-i18n="job3Company">Baker Hughes, «Газпром бурение», ERIELL, «Варьеганская НБК»</div>
+          <div class="job-role" data-i18n="job3Role">Ведущий инженер</div>
+          <div class="job-period" data-i18n="job3Period">07.2015 – 03.2022 · 6 лет 9 мес.</div>
+        </div>
+        <ul>
+          <li data-i18n="job3a">Аудит и испытания бурового оборудования, анализ эффективности производственных блоков, координация подразделений</li>
+          <li data-i18n="job3b">Организация строительства и пусконаладка буровых установок, контроль СМР</li>
+        </ul>
+        <div class="achievement">
+          <strong data-i18n="achievements">Достижения:</strong>
+          <ul>
+            <li data-i18n="job3c">Снизил объём внеплановых ремонтных работ на 20% за счёт программы оптимизации эксплуатации.</li>
+            <li data-i18n="job3d">Реализовал 15+ проектов аудита и диагностики оборудования, автоматизировал документооборот в 1С.</li>
+          </ul>
+        </div>
+      </article>
 
-                        <div class="inline-list">
-                            <span class="chip">SQL</span>
-                            <span class="chip">Python</span>
-                            <span class="chip">ETL</span>
-                            <span class="chip">Data Quality</span>
-                            <span class="chip">Power BI</span>
-                            <span class="chip">Tableau</span>
-                            <span class="chip">Process Mining</span>
-                            <span class="chip">Docker</span>
-                            <span class="chip">Airflow</span>
-                            <span class="chip">dbt</span>
-                            <span class="chip">AI tools</span>
-                        </div>
-                    </div>
+    </div>
+  </div>
+</section>
 
-                    <div class="facts">
-                        <div class="fact">
-                            <strong>1 год 6 мес.</strong>
-                            Data Analyst / Бизнес-аналитик в Норникель Спутник
-                        </div>
-                        <div class="fact">
-                            <strong>2 года 6 мес.</strong>
-                            Руководитель проектов в АО «ММК Мосинтраст»
-                        </div>
-                        <div class="fact">
-                            <strong>6 лет 9 мес.</strong>
-                            Ведущий инженер в буровой отрасли
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </section>
+<section id="cases">
+  <div class="container">
+    <div class="section-header">
+      <h2 data-i18n="casesTitle">Кейсы из практики</h2>
+      <p data-i18n="casesIntro">Кейсы по Process Mining, анализу логов и автоматизации.</p>
+    </div>
+    <div class="projects-grid">
 
-        <section class="evidence-strip" aria-label="Ключевые результаты">
-            <div class="container">
-                <div class="evidence-grid">
-                    <div><strong>500+</strong><span>сотрудников в кейсе корпоративного портала</span></div>
-                    <div><strong>400+</strong><span>SAP HCM z-транзакций проверено</span></div>
-                    <div><strong>20+</strong><span>узких мест выявлено в процессе согласования</span></div>
-                    <div><strong>5+</strong><span>систем для автоматизированного анализа логов</span></div>
-                </div>
-            </div>
-        </section>
+      <article class="project-card">
+        <span class="project-tag" data-i18n="case1Tag">Process Mining · КАСУД</span>
+        <h3 data-i18n="case1Title">Ускорение согласований</h3>
+        <p data-i18n="case1P">Анализ событийных логов помог найти узкие места в маршрутах согласования и определить точки улучшения.</p>
+        <ul>
+          <li data-i18n="case1a">Выявлено 20+ узких мест</li>
+          <li data-i18n="case1b">Реализовано 50+ улучшений витрин и дашбордов</li>
+        </ul>
+        <div class="case-outcome"><span data-i18n="caseOutcomeLabel">Результат</span><strong data-i18n="case1Outcome">Среднее время согласования сократилось примерно на 5%</strong></div>
+        <div class="tech-stack"><span class="tech-badge">Python</span><span class="tech-badge">Process Mining</span><span class="tech-badge">SQL</span></div>
+      </article>
 
-        <section id="experience">
-            <div class="container">
-                <div class="section-header">
-                    <h2>Опыт работы</h2>
-                </div>
+      <article class="project-card">
+        <span class="project-tag" data-i18n="case2Tag">Python · Анализ логов</span>
+        <h3 data-i18n="case2Title">Аудит SAP HCM</h3>
+        <p data-i18n="case2P">Проверка использования z-транзакций по логам для выявления неиспользуемого функционала.</p>
+        <ul>
+          <li data-i18n="case2a">Проверено 400+ транзакций</li>
+          <li data-i18n="case2c">Результат анализа помогает принимать решения об оптимизации</li>
+        </ul>
+        <div class="case-outcome"><span data-i18n="caseOutcomeLabel">Результат</span><strong data-i18n="case2Outcome">У 27% транзакций не было использования более 6 месяцев</strong></div>
+        <div class="tech-stack"><span class="tech-badge">Python</span><span class="tech-badge">Log Analysis</span><span class="tech-badge">SAP HCM</span></div>
+      </article>
 
-                <div class="experience-list">
-                    <div class="job">
-                        <div class="job-header">
-                            <div class="job-company">ООО «Норникель Спутник», АО «Желдорреммаш», Москва</div>
-                            <div class="job-role">Data Analyst / Бизнес-аналитик</div>
-                            <div class="job-period">09.2024 – 02.2026 · 1 год 6 мес.</div>
-                        </div>
+      <article class="project-card">
+        <span class="project-tag" data-i18n="case3Tag">Аналитика · Внутренний продукт</span>
+        <h3 data-i18n="case3Title">Аудит корпоративного портала</h3>
+        <p data-i18n="case3P">Анализ активности сотрудников и проектирование дашборда метрик в Process Mining.</p>
+        <ul>
+          <li data-i18n="case3a">Охват — 500+ сотрудников</li>
+          <li data-i18n="case3b">Отслеживаемые метрики расширены с 10 до 30+</li>
+        </ul>
+        <div class="case-outcome"><span data-i18n="caseOutcomeLabel">Результат</span><strong data-i18n="case3Outcome">Вовлечённость выросла на 20%</strong></div>
+        <div class="tech-stack"><span class="tech-badge">Process Mining</span><span class="tech-badge">Python</span><span class="tech-badge">Metrics</span></div>
+      </article>
 
-                        <ul>
-                            <li>ETL: извлечение, очистка и трансформация данных из внутренних источников (SQL, Python/Pandas), поиск аномалий и инсайтов</li>
-                            <li>Контроль качества данных (Data Quality), валидация бизнес-логики витрин</li>
-                            <li>Дашборды в Power BI / Tableau / Metabase для разных уровней управления</li>
-                            <li>Process Mining: анализ событийных логов и выявление отклонений</li>
-                        </ul>
+      <article class="project-card">
+        <span class="project-tag">Data Quality · Automation</span>
+        <h3 data-i18n="case4Title">Автоматизация анализа логов</h3>
+        <p data-i18n="case4P">Повторяемый анализ логов для нескольких систем вместо ручной многодневной проверки.</p>
+        <ul>
+          <li data-i18n="case4a">Автоматизировано для 5+ систем</li>
+          <li data-i18n="case4c">SQL и Python/Pandas для обработки и проверки данных</li>
+        </ul>
+        <div class="case-outcome"><span data-i18n="caseOutcomeLabel">Результат</span><strong data-i18n="case4Outcome">Время анализа сократилось с нескольких дней до 3–4 часов</strong></div>
+        <div class="tech-stack"><span class="tech-badge">Python</span><span class="tech-badge">Pandas</span><span class="tech-badge">SQL</span></div>
+      </article>
 
-                        <div class="achievement">
-                            <strong>Достижения:</strong>
-                            <ul>
-                                <li>Для корпоративного портала спроектировал дашборд метрик в Process Mining. Вовлечённость выросла на 20%; охват составил 500+ сотрудников, число метрик увеличилось с 10 до 30+.</li>
-                                <li>Проверил логи 400+ z-транзакций SAP HCM на Python. Выяснил, что 27% транзакций не использовались более 6 месяцев.</li>
-                                <li>В КАСУД выявил 20+ узких мест и реализовал 50+ улучшений витрин и дашбордов. Среднее время согласования сократилось примерно на 5%.</li>
-                                <li>Автоматизировал анализ логов для 5+ систем на Python. Сократил время анализа с нескольких дней до 3–4 часов.</li>
-                            </ul>
-                        </div>
-                    </div>
+    </div>
+  </div>
+</section>
 
-                    <div class="job">
-                        <div class="job-header">
-                            <div class="job-company">АО «ММК Мосинтраст», Москва</div>
-                            <div class="job-role">Руководитель проектов</div>
-                            <div class="job-period">04.2022 – 09.2024 · 2 года 6 мес.</div>
-                        </div>
+<section id="projects" style="background:var(--card-bg)">
+  <div class="container">
+    <div class="section-header">
+      <h2 data-i18n="projectsTitle">Личные проекты</h2>
+      <p data-i18n="projectsIntro">Практические проекты по аналитике данных, SQL, DWH, облачной инфраструктуре, контейнеризации и подготовке аналитиков.</p>
+    </div>
+    <div class="projects-grid">
 
-                        <ul>
-                            <li>Управление проектами капитального строительства и ремонта: от ТЗ до сдачи, координация с заказчиками и подрядчиками</li>
-                            <li>Анализ бизнес-процессов, подготовка ТЗ, бюджетов, графиков, карт рисков; стандартизация процессов</li>
-                        </ul>
+      <article class="project-card">
+        <span class="project-tag">Data Analytics · SQL · ETL</span>
+        <h3>Data portfolio</h3>
+        <p data-i18n="proj1P">Практические проекты по EDA на Python, финтех-SQL, Airflow ETL и локальному BI-стеку.</p>
+        <a class="project-link" href="https://github.com/MartinMinart/data-portfolio" target="_blank" rel="noopener noreferrer" data-i18n="openRepo">Открыть репозиторий ↗</a>
+      </article>
 
-                        <div class="achievement">
-                            <strong>Достижения:</strong>
-                            <ul>
-                                <li>Внедрил модуль 1С-Битрикс24 для подбора персонала и сократил время подбора ресурсов на 20%.</li>
-                                <li>Разработал единый реестр сроков, бюджетов и рисков. Более 20 проектов завершены в срок и в рамках бюджета.</li>
-                                <li>На основе анализа данных об адаптации оптимизировал онбординг и сократил срок выхода на продуктивность на 30%.</li>
-                            </ul>
-                        </div>
-                    </div>
+      <article class="project-card project-card-featured">
+        <span class="project-tag">Analytics Engineering · Cloud</span>
+        <h3>Analytics Platform on Cloud.ru</h3>
+        <p data-i18n="proj2P">Демо-платформа для розничной сети на синтетических данных (~10 000 заказов). PostgreSQL, Airflow и dbt подготавливают данные для аналитики в ClickHouse и Metabase; инфраструктура развёрнута на Cloud.ru.</p>
+        <div class="project-proof">PostgreSQL · Airflow · dbt · ClickHouse · Metabase · 4 Cloud.ru VMs</div>
+        <a class="project-link" href="https://github.com/MartinMinart/cloud-infrastructure-project" target="_blank" rel="noopener noreferrer" data-i18n="openRepo">Открыть репозиторий ↗</a>
+      </article>
 
-                    <div class="job">
-                        <div class="job-header">
-                            <div class="job-company">Baker Hughes, «Газпром бурение», ERIELL, «Варьеганская НБК»</div>
-                            <div class="job-role">Ведущий инженер</div>
-                            <div class="job-period">07.2015 – 03.2022 · 6 лет 9 мес.</div>
-                        </div>
+      <article class="project-card">
+        <span class="project-tag">Analytics Stack · Credit Risk</span>
+        <h3>Docker experiments</h3>
+        <p data-i18n="proj3P">Docker Compose-среда для практики SQL/dbt и аналитики кредитного риска: PostgreSQL, Airflow, Metabase, Grafana, n8n, Node-RED и Qdrant.</p>
+        <a class="project-link" href="https://github.com/MartinMinart/docker-experiments" target="_blank" rel="noopener noreferrer" data-i18n="openRepo">Открыть репозиторий ↗</a>
+      </article>
 
-                        <ul>
-                            <li>Аудит и испытания бурового оборудования, анализ эффективности производственных блоков, координация подразделений</li>
-                            <li>Организация строительства и пусконаладка буровых установок, контроль СМР</li>
-                        </ul>
+      <article class="project-card project-card-featured">
+        <div class="project-heading">
+          <span class="project-mark" aria-hidden="true">SQL</span>
+          <div><span class="project-tag" data-i18n="trainerTag">Подготовка к собеседованию</span><h3 data-i18n="sqlTrainerTitle">SQL практикум</h3></div>
+        </div>
+        <p data-i18n="sqlTrainerP">Теория, практика и симулятор собеседования по SQL. Работает в браузере без бэкенда.</p>
+        <div class="project-proof" data-i18n="sqlProof">SQL-паттерны · Практические задания · Интервью</div>
+        <a class="project-link" href="https://martinminart.github.io/data-sql-trainer/" target="_blank" rel="noopener noreferrer" data-i18n="openTrainer">Открыть тренажёр ↗</a>
+      </article>
 
-                        <div class="achievement">
-                            <strong>Достижения:</strong>
-                            <ul>
-                                <li>Снизил объём внеплановых ремонтных работ на 20% за счёт программы оптимизации эксплуатации.</li>
-                                <li>Реализовал 15+ проектов аудита и диагностики оборудования, автоматизировал документооборот в 1С.</li>
-                            </ul>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </section>
+      <article class="project-card project-card-featured">
+        <div class="project-heading">
+          <span class="project-mark project-mark--trainer" aria-hidden="true">710</span>
+          <div><span class="project-tag" data-i18n="analystTrainerTag">Подготовка аналитиков</span><h3 data-i18n="analystTrainerTitle">Становись умнее</h3></div>
+        </div>
+        <p data-i18n="analystTrainerP">710 вопросов по SQL, Python, DWH, Big Data, аналитике, инструментам и soft skills. Работает в браузере без сервера.</p>
+        <div class="project-proof" data-i18n="analystProof">11 разделов · 63 темы · 710 вопросов</div>
+        <a class="project-link" href="https://martinminart.github.io/data-analyst-trainer/" target="_blank" rel="noopener noreferrer" data-i18n="openTrainer">Открыть тренажёр ↗</a>
+      </article>
 
-        <section id="cases">
-            <div class="container">
-                <div class="section-header">
-                    <h2>Кейсы из практики</h2>
-                    <p>Кейсы по Process Mining, анализу логов и автоматизации.</p>
-                </div>
+    </div>
+  </div>
+</section>
 
-                <div class="projects-grid">
-                    <article class="project-card">
-                        <span class="project-tag">Process Mining · КАСУД</span>
-                        <h3>Ускорение согласований</h3>
-                        <p>Анализ событийных логов помог найти узкие места в маршрутах согласования и определить точки улучшения.</p>
-                        <ul>
-                            <li>Выявлено 20+ узких мест</li>
-                            <li>Реализовано 50+ улучшений витрин и дашбордов</li>
-                            <li>Среднее время согласования сокращено примерно на 5%</li>
-                        </ul>
-                        <div class="tech-stack">
-                            <span class="tech-badge">Python</span>
-                            <span class="tech-badge">Process Mining</span>
-                            <span class="tech-badge">SQL</span>
-                        </div>
-                    </article>
+<section id="skills">
+  <div class="container">
+    <div class="section-header"><h2 data-i18n="skillsTitle">Ключевые навыки</h2></div>
+    <div class="skills-grid">
 
-                    <article class="project-card">
-                        <span class="project-tag">Python · Анализ логов</span>
-                        <h3>Аудит SAP HCM</h3>
-                        <p>Проверка использования z-транзакций по логам для выявления неиспользуемого функционала.</p>
-                        <ul>
-                            <li>Проверено 400+ транзакций</li>
-                            <li>У 27% не было использования более 6 месяцев</li>
-                            <li>Результат анализа помогает принимать решения об оптимизации</li>
-                        </ul>
-                        <div class="tech-stack">
-                            <span class="tech-badge">Python</span>
-                            <span class="tech-badge">Log Analysis</span>
-                            <span class="tech-badge">SAP HCM</span>
-                        </div>
-                    </article>
+      <div class="skill-category skill-primary">
+        <h3 data-i18n="skillData">Data & Analytics</h3>
+        <ul><li>SQL</li><li>Python</li><li>ETL</li><li>Data Quality</li><li>Process Mining</li></ul>
+      </div>
 
-                    <article class="project-card">
-                        <span class="project-tag">Аналитика · Внутренний продукт</span>
-                        <h3>Аудит корпоративного портала</h3>
-                        <p>Анализ активности сотрудников и проектирование дашборда метрик в Process Mining.</p>
-                        <ul>
-                            <li>Охват – 500+ сотрудников</li>
-                            <li>Отслеживаемые метрики расширены с 10 до 30+</li>
-                            <li>Вовлечённость выросла на 20%</li>
-                        </ul>
-                        <div class="tech-stack">
-                            <span class="tech-badge">Process Mining</span>
-                            <span class="tech-badge">Python</span>
-                            <span class="tech-badge">Metrics</span>
-                        </div>
-                    </article>
+      <div class="skill-category skill-primary">
+        <h3 data-i18n="skillBI">BI & Dashboards</h3>
+        <ul><li>Power BI</li><li>Tableau</li><li>Metabase</li><li>Superset</li><li>DataLens</li><li>Qlik Sense</li><li>Excel</li></ul>
+      </div>
 
-                    <article class="project-card">
-                        <span class="project-tag">Data Quality · Automation</span>
-                        <h3>Автоматизация анализа логов</h3>
-                        <p>Повторяемый анализ логов для нескольких систем вместо ручной многодневной проверки.</p>
-                        <ul>
-                            <li>Автоматизировано для 5+ систем</li>
-                            <li>Время анализа сокращено до 3–4 часов</li>
-                            <li>SQL и Python/Pandas для обработки и проверки данных</li>
-                        </ul>
-                        <div class="tech-stack">
-                            <span class="tech-badge">Python</span>
-                            <span class="tech-badge">Pandas</span>
-                            <span class="tech-badge">SQL</span>
-                        </div>
-                    </article>
-                </div>
-            </div>
-        </section>
+      <div class="skill-category skill-primary">
+        <h3 data-i18n="skillDE">Analytics Engineering</h3>
+        <ul><li>ODS</li><li>DDS</li><li>Datamart</li><li>Airflow</li><li>dbt</li></ul>
+      </div>
 
-        <section id="projects" style="background: var(--card-bg);">
-            <div class="container">
-                <div class="section-header">
-                    <h2>Личные проекты</h2>
-                    <p>Практические проекты по аналитике данных, SQL, DWH, облачной инфраструктуре, контейнеризации и подготовке аналитиков.</p>
-                </div>
-                <div class="projects-grid">
-                    <article class="project-card">
-                        <span class="project-tag">Analytics Engineering</span>
-                        <h3>Data portfolio</h3>
-                        <p>Практические работы и материалы по аналитике данных.</p>
-                        <a class="project-link" href="https://github.com/MartinMinart/data-portfolio" target="_blank" rel="noopener noreferrer">Открыть репозиторий ↗</a>
-                    </article>
-                    <article class="project-card project-card-featured">
-                        <span class="project-tag">Analytics Engineering · Cloud</span>
-                        <h3>Analytics Platform on Cloud.ru</h3>
-                        <p>Демо-платформа для розничной сети на синтетических данных (~10 000 заказов). PostgreSQL, Airflow и dbt подготавливают данные для аналитики в ClickHouse и Metabase; инфраструктура развёрнута на Cloud.ru.</p>
-                        <div class="project-proof">PostgreSQL · Airflow · dbt · ClickHouse · Metabase · 4 ВМ Cloud.ru</div>
-                        <a class="project-link" href="https://github.com/MartinMinart/cloud-infrastructure-project" target="_blank" rel="noopener noreferrer">Открыть репозиторий ↗</a>
-                    </article>
-                    <article class="project-card">
-                        <span class="project-tag">Containers</span>
-                        <h3>Docker experiments</h3>
-                        <p>Эксперименты с контейнеризацией и локальными средами.</p>
-                        <a class="project-link" href="https://github.com/MartinMinart/docker-experiments" target="_blank" rel="noopener noreferrer">Открыть репозиторий ↗</a>
-                    </article>
-                    <article class="project-card project-card-featured">
-                        <div class="project-heading">
-                            <span class="project-mark" aria-hidden="true">SQL</span>
-                            <div>
-                                <span class="project-tag">Подготовка к собеседованию</span>
-                                <h3>SQL практикум</h3>
-                            </div>
-                        </div>
-                        <p>Теория, практика и симулятор собеседования по SQL. Работает в браузере без бэкенда.</p>
-                        <div class="project-proof">SQL-паттерны · Практические задания · Интервью</div>
-                        <a class="project-link" href="https://martinminart.github.io/data-sql-trainer/" target="_blank" rel="noopener noreferrer">Открыть тренажёр ↗</a>
-                    </article>
-                    <article class="project-card project-card-featured">
-                        <div class="project-heading">
-                            <span class="project-mark project-mark--trainer" aria-hidden="true">710</span>
-                            <div>
-                                <span class="project-tag">Подготовка аналитиков</span>
-                                <h3>Становись умнее</h3>
-                            </div>
-                        </div>
-                        <p>710 вопросов по SQL, Python, DWH, Big Data, аналитике, инструментам и soft skills. Работает в браузере без сервера.</p>
-                        <div class="project-proof">11 разделов · 63 темы · 710 вопросов</div>
-                        <a class="project-link" href="https://martinminart.github.io/data-analyst-trainer/" target="_blank" rel="noopener noreferrer">Открыть тренажёр ↗</a>
-                    </article>
-                </div>
-            </div>
-        </section>
+      <div class="skill-category">
+        <h3 data-i18n="skillTools">Tools & AI</h3>
+        <ul><li>Docker</li><li>Kubernetes</li><li>Git</li><li>Prompt Engineering</li><li>REST API</li></ul>
+      </div>
 
-        <section id="skills">
-            <div class="container">
-                <div class="section-header">
-                    <h2>Ключевые навыки</h2>
-                </div>
+      <div class="skill-category">
+        <h3 data-i18n="skillBA">Бизнес-анализ</h3>
+        <ul><li data-i18n="skillBA1">Сбор требований</li><li data-i18n="skillBA2">Интервью</li><li>User stories</li><li>Use cases</li><li data-i18n="skillBA5">Технические задания</li></ul>
+      </div>
 
-                <div class="skills-grid">
-                    <div class="skill-category skill-primary">
-                        <h3>Data & Analytics</h3>
-                        <ul>
-                            <li>SQL</li>
-                            <li>Python</li>
-                            <li>ETL</li>
-                            <li>Data Quality</li>
-                            <li>Process Mining</li>
-                        </ul>
-                    </div>
+      <div class="skill-category">
+        <h3 data-i18n="skillModel">Моделирование</h3>
+        <ul><li>BPMN</li><li>EPC</li><li>IDEF</li><li>UML</li><li>AS-IS / TO-BE</li></ul>
+      </div>
 
-                    <div class="skill-category skill-primary">
-                        <h3>BI & Dashboards</h3>
-                        <ul>
-                            <li>Power BI</li>
-                            <li>Tableau</li>
-                            <li>Metabase</li>
-                            <li>Superset</li>
-                            <li>Excel</li>
-                        </ul>
-                    </div>
+      <div class="skill-category">
+        <h3 data-i18n="skillAnalystTools">Инструменты аналитика</h3>
+        <ul><li>Visio</li><li>ARIS</li><li>Miro</li><li>Figma</li><li>Business Studio</li><li>draw.io</li><li>Jira</li><li>Confluence</li></ul>
+      </div>
 
-                    <div class="skill-category skill-primary">
-                        <h3>Data Engineering</h3>
-                        <ul>
-                            <li>ODS</li>
-                            <li>DDS</li>
-                            <li>Datamart</li>
-                            <li>Airflow</li>
-                            <li>dbt</li>
-                        </ul>
-                    </div>
+      <div class="skill-category">
+        <h3 data-i18n="skillMethods">Методологии</h3>
+        <ul><li>Agile</li><li>Scrum</li><li>Waterfall</li><li>Lean</li><li>Kanban</li><li data-i18n="skillMethodSDD">SDD — разработка на основе спецификаций</li></ul>
+      </div>
 
-                    <div class="skill-category">
-                        <h3>Tools & AI</h3>
-                        <ul>
-                            <li>Docker</li>
-                            <li>Kubernetes</li>
-                            <li>Git</li>
-                            <li>Prompt Engineering</li>
-                            <li>REST API</li>
-                        </ul>
-                    </div>
+      <div class="skill-category">
+        <h3 data-i18n="skillIndustrial">Промышленные системы</h3>
+        <ul><li data-i18n="skill1C">1С ERP</li><li>SAP ERP</li><li data-i18n="skillMES">MES / АСУ ТП</li><li data-i18n="skillAudit">Аудит ИС</li></ul>
+      </div>
 
-                    <div class="skill-category">
-                        <h3>Бизнес-анализ</h3>
-                        <ul>
-                            <li>Сбор требований</li>
-                            <li>Интервью</li>
-                            <li>User stories</li>
-                            <li>Use cases</li>
-                            <li>Технические задания</li>
-                        </ul>
-                    </div>
+      <div class="verified-skills" aria-label="Skills verified on HeadHunter" data-i18n-aria-label="verifiedLabel">
+        <strong data-i18n="verified">Подтверждено на HeadHunter</strong>
+        <span class="chip">Python</span><span class="chip">SQL</span><span class="chip">Git</span><span class="chip">API</span><span class="chip">Docker</span><span class="chip" data-i18n="stats">Математическая статистика</span>
+      </div>
 
-                    <div class="skill-category">
-                        <h3>Моделирование</h3>
-                        <ul>
-                            <li>BPMN</li>
-                            <li>EPC</li>
-                            <li>IDEF</li>
-                            <li>UML</li>
-                            <li>AS-IS / TO-BE</li>
-                        </ul>
-                    </div>
+    </div>
+  </div>
+</section>
 
-                    <div class="skill-category">
-                        <h3>Инструменты аналитика</h3>
-                        <ul>
-                            <li>Visio</li>
-                            <li>ARIS</li>
-                            <li>Miro</li>
-                            <li>Figma</li>
-                            <li>Business Studio</li>
-                            <li>draw.io</li>
-                            <li>Jira</li>
-                            <li>Confluence</li>
-                        </ul>
-                    </div>
+<section id="education">
+  <div class="container">
+    <div class="section-header"><h2 data-i18n="educationTitle">Образование и курсы</h2></div>
+    <div class="meta-grid">
+      <div class="meta-card">
+        <h3 data-i18n="education">Образование</h3>
+        <ul>
+          <li data-i18n="edu1">2024 — МИРБИС, MBA, Маркетинг-менеджмент</li>
+          <li data-i18n="edu2">2015 — Государственный педагогический университет — Бухучёт, анализ и аудит</li>
+          <li data-i18n="edu3">2011 — Государственный технический университет — Инженер-механик</li>
+        </ul>
+      </div>
+      <div class="meta-card">
+        <h3 data-i18n="courses">Курсы</h3>
+        <ul>
+          <li data-i18n="course1">2025 — Skillbox — Продюсер онлайн-курсов с нуля до PRO</li>
+          <li data-i18n="course2">2022 — Университет ИИ — Data Science, ML, Python (NumPy/Pandas/Matplotlib/Seaborn)</li>
+          <li data-i18n="course3">2017 — Мой бизнес Югра — Социальное предпринимательство</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
 
-                    <div class="skill-category">
-                        <h3>Методологии</h3>
-                        <ul>
-                            <li>Agile</li>
-                            <li>Scrum</li>
-                            <li>Waterfall</li>
-                            <li>Lean</li>
-                            <li>Kanban</li>
-                        </ul>
-                    </div>
+<section id="toolkit">
+  <div class="container">
+    <div class="section-header">
+      <h2 data-i18n="toolkitTitle">Рабочий инструментарий</h2>
+      <p data-i18n="toolkitIntro">Среда и библиотеки для анализа, разработки и автоматизации.</p>
+    </div>
+    <div class="toolkit-grid">
+      <article class="toolkit-card"><span class="toolkit-index">01</span><h3 data-i18n="tool1Title">Python и данные</h3><p>VS Code · Jupyter Notebook · Git</p><div class="tool-tags"><span>pandas</span><span>NumPy</span><span>SciPy</span><span>SQLAlchemy</span><span>psycopg2</span></div></article>
+      <article class="toolkit-card"><span class="toolkit-index">02</span><h3 data-i18n="tool2Title">Визуализация и ML</h3><p data-i18n="tool2P">Исследование данных, графики, статистика и модели.</p><div class="tool-tags"><span>Matplotlib</span><span>Seaborn</span><span>Plotly</span><span>HoloViews</span><span>Bokeh</span><span>scikit-learn</span><span>statsmodels</span><span>NLTK</span></div></article>
+      <article class="toolkit-card"><span class="toolkit-index">03</span><h3 data-i18n="tool3Title">Документы и интеграции</h3><p data-i18n="tool3P">Обработка таблиц, PDF, веб-данных и API.</p><div class="tool-tags"><span>openpyxl</span><span>python-docx</span><span>pdfplumber</span><span>PyMuPDF</span><span>Requests</span><span>HTTPX</span><span>BeautifulSoup</span></div></article>
+      <article class="toolkit-card"><span class="toolkit-index">04</span><h3 data-i18n="tool4Title">AI и разработка</h3><p data-i18n="tool4P">Инструменты для исследования, автоматизации и работы с моделями.</p><div class="tool-tags"><span>PyTorch</span><span>Whisper</span><span>LangChain</span><span>RAG</span><span>MCP</span><span>n8n</span><span>Ollama</span></div></article>
+    </div>
+    <div class="ai-workflow">
+      <div>
+        <span class="eyebrow-light">AI workflow</span>
+        <h3 data-i18n="aiTitle">Ассистенты, агенты и разработка с AI</h3>
+        <p data-i18n="aiP">Использую prompt engineering, RAG, MCP и agent harnesses — среды для запуска и проверки AI-агентов. Для автоматизации применяю n8n и Ollama, результаты проверяю перед использованием.</p>
+      </div>
+      <div class="ai-tools">
+        <div><strong data-i18n="aiModels">Ассистенты и модели</strong><span>Claude · ChatGPT · Perplexity · Qwen · DeepSeek · GigaChat · Grok · Mistral · NotebookLM</span></div>
+        <div><strong data-i18n="aiCode">AI для кода</strong><span>Qwen Coder · OpenCode · OpenClaw · Giga Code · GitHub Copilot</span></div>
+        <div><strong data-i18n="aiAgents">Агенты и интеграции</strong><span data-i18n="aiAgentsList">RAG · MCP · n8n · Ollama · AI-агенты и ассистенты</span></div>
+      </div>
+    </div>
+  </div>
+</section>
 
-                    <div class="skill-category">
-                        <h3>Промышленные системы</h3>
-                        <ul>
-                            <li>1С ERP</li>
-                            <li>SAP ERP</li>
-                            <li>MES / АСУ ТП</li>
-                            <li>Аудит ИС</li>
-                        </ul>
-                    </div>
+<section id="contacts" class="final-cta">
+  <div class="container">
+    <div class="section-header">
+      <h2 data-i18n="contactTitle">Обсудим, как превратить данные в результат?</h2>
+      <p data-i18n="contactText">Готов подключиться к задачам аналитики, BI, DWH, Data Quality и оптимизации процессов. Открыт к позициям Data Analyst, BI Analyst и Analytics Engineer.</p>
+      <div class="contact-actions">
+        <a class="btn" href="https://t.me/Artur_Min" target="_blank" rel="noopener noreferrer" data-i18n="telegram">Написать в Telegram</a>
+        <a class="btn btn-outline" href="mailto:iamartur1111@gmail.com" data-i18n="email">Написать на email</a>
+        <a class="text-link" href="https://drive.google.com/file/d/1JkIpSLRhYlpFip-zRDEx1RoeUZy9_zMZ/view" target="_blank" rel="noopener noreferrer" data-i18n="resumePdf">Резюме PDF ↗</a>
+        <a class="text-link" href="https://odintsovo.hh.ru/resume/fce71a06ff107c4fe20039ed1f4664364a6841?hhtmFrom=applicant_profile" target="_blank" rel="noopener noreferrer">hh.ru ↗</a>
+      </div>
+    </div>
+  </div>
+</section>
 
-                    <div class="verified-skills" aria-label="Навыки, подтверждённые на HeadHunter">
-                        <strong>Подтверждено на HeadHunter</strong>
-                        <span class="chip">Python</span>
-                        <span class="chip">SQL</span>
-                        <span class="chip">Git</span>
-                        <span class="chip">API</span>
-                        <span class="chip">Docker</span>
-                        <span class="chip">Математическая статистика</span>
-                    </div>
-                </div>
-            </div>
-        </section>
+<section id="contactDetails">
+  <div class="container">
+    <div class="section-header"><h2 data-i18n="detailsTitle">Контакты и дополнительная информация</h2></div>
+    <div class="contact-wrap">
+      <div class="card">
+        <div class="contact-list">
+          <div class="contact-item"><span class="contact-badge">T</span><a href="tel:+79822167848">+7 (982) 216-78-48</a></div>
+          <div class="contact-item"><span class="contact-badge">✉</span><a href="mailto:iamartur1111@gmail.com">iamartur1111@gmail.com</a></div>
+          <div class="contact-item"><span class="contact-badge">TG</span><a href="https://t.me/Artur_Min" target="_blank" rel="noopener noreferrer">@Artur_Min</a></div>
+          <div class="contact-item"><span class="contact-badge">📍</span><span data-i18n="location">Москва, Россия</span></div>
+          <p class="contact-availability" data-i18n="detailsText">Готов к удалённой или гибридной работе, а также к офису в Москве.</p>
+        </div>
+      </div>
+      <div class="card">
+        <h3 data-i18n="additional">Дополнительно</h3>
+        <ul style="list-style:none;display:grid;gap:10px;color:var(--text-light);margin-top:14px">
+          <li data-i18n="citizenship">Гражданство: РФ</li>
+          <li data-i18n="languages">Языки: русский — родной, английский — B1</li>
+          <li data-i18n="workMode">Гибрид / офис</li>
+          <li>GitHub: github.com/MartinMinart</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
 
-        <section id="education">
-            <div class="container">
-                <div class="section-header">
-                    <h2>Образование и курсы</h2>
-                </div>
+</main>
 
-                <div class="meta-grid">
-                    <div class="meta-card">
-                        <h3>Образование</h3>
-                        <ul>
-                            <li>2024 – МИРБИС, MBA, Маркетинг-менеджмент</li>
-                            <li>2015 – Государственный педагогический университет – Бухучёт, анализ и аудит</li>
-                            <li>2011 – Государственный технический университет – Инженер-механик</li>
-                        </ul>
-                    </div>
+<footer><span data-i18n="footer">© 2026 Артур Минин · Data Analyst / Analytics Engineer</span></footer>
 
-                    <div class="meta-card">
-                        <h3>Курсы</h3>
-                        <ul>
-                            <li>2025 – Skillbox – Продюсер онлайн-курсов с нуля до PRO</li>
-                            <li>2022 – Университет ИИ – Data Science, ML, Python (NumPy/Pandas/Matplotlib/Seaborn)</li>
-                            <li>2017 – Мой бизнес Югра – Социальное предпринимательство</li>
-                        </ul>
-                    </div>
-                </div>
-            </div>
-        </section>
+<script>
+const translations = {
+  ru:{
+  brandName:"АРТУР МИНИН",personName:"Артур Минин",mobileNavLabel:"Мобильная навигация",evidenceLabel:"Ключевые результаты",verifiedLabel:"Подтверждённые навыки на HeadHunter",
+  pageTitle:"Артур Минин | Data Analyst / Analytics Engineer",
+  pageDescription:"Портфолио Артура Минина — Data Analyst / Analytics Engineer, SQL, Python, BI, DWH, Data Quality, Process Mining.",
+  skip:"Перейти к содержимому",
+  navAbout:"Обо мне",navCases:"Кейсы",navProjects:"Проекты",navSkills:"Стек",navContacts:"Контакты",resumeShort:"Резюме ↗",
+  role:"Data Analyst · Analytics Engineer",
+  heroStack:"Помогаю находить точки роста через данные, процессы и BI",
+  scroll:"scroll",
+  heroSummary:"Аналитик данных на стыке аналитики, процессов и IT. Извлекаю, очищаю и анализирую данные, строю витрины и дашборды. Автоматизирую проверки и выстраиваю data-driven-подход с помощью SQL, Python, BI и Process Mining.",
+  heroProof1Strong:"3+ года",heroProof1Text:"Data Analyst / Бизнес-аналитик",heroProof2Strong:"10+ лет",heroProof2Text:"профессионального опыта",heroProof3Strong:"SQL · Python · BI · DWH",heroProof3Text:"Основной стек постоянно расширяется и углубляется",
+  experienceLink:"Опыт работы",viewCases:"Смотреть кейсы",resumePdf:"Резюме PDF ↗",featuredRepos:"Избранные репозитории",repoData:"Data-проекты:",repoCloud:"Облако:",repoDocker:"Docker:",
+  aboutTitle:"Обо мне",
+  aboutP1:"Работаю с SQL и Python: извлекаю, очищаю и анализирую данные, проверяю качество данных и бизнес-логику витрин. Создаю аналитические витрины и интерактивные дашборды в Power BI, Tableau и Metabase.",
+  aboutP2:"Имею практический опыт анализа событийных логов и Process Mining: выявляю узкие места, моделирую процессы и помогаю находить точки для улучшения. Сочетаю техническую аналитику с опытом управления проектами и инженерии — собираю требования, формализую задачи и перевожу бизнес-цели в метрики, решения и задачи для Data Engineering.",
+  aboutFact1Title:"Техническая аналитика",aboutFact1Text:"SQL, Python, Data Quality, витрины и BI-дашборды.",aboutFact2Title:"Анализ процессов",aboutFact2Text:"Process Mining, BPMN, AS-IS / TO-BE, поиск узких мест.",aboutFact3Title:"Связь бизнеса и IT",aboutFact3Text:"Требования, метрики, постановка задач и коммуникация с командами.",aboutFact4Title:"Analytics Engineering",aboutFact4Text:"PostgreSQL, ClickHouse, Airflow, dbt, Docker и DWH-подход.",
+  ev1:"сотрудников в кейсе корпоративного портала",ev2:"SAP HCM z-транзакций проверено",ev3:"узких мест выявлено в процессе согласования",ev4:"время анализа вместо нескольких дней",evMetric4:"3–4 ч",
+  experienceTitle:"Опыт работы",job1Company:"ООО «Норникель Спутник», АО «Желдорреммаш», Москва",job1Role:"Data Analyst / Бизнес-аналитик",job1Period:"09.2024 – 02.2026 · 1 год 6 мес.",job2Period:"04.2022 – 09.2024 · 2 года 6 мес.",job3Period:"07.2015 – 03.2022 · 6 лет 9 мес.",
+  job1a:"ETL: извлечение, очистка и трансформация данных из внутренних источников (SQL, Python/Pandas), поиск аномалий и инсайтов",job1b:"Контроль качества данных (Data Quality), валидация бизнес-логики витрин",job1c:"Дашборды в Power BI / Tableau / Metabase для разных уровней управления",job1d:"Process Mining: анализ событийных логов и выявление отклонений",achievements:"Достижения:",
+  job1e:"Спроектировал дашборд метрик корпоративного портала с применением Process Mining.",
+  job1f:"Проверил использование SAP HCM z-транзакций на Python и подготовил данные для решений по оптимизации.",
+  job1h:"Автоматизировал повторяемый анализ логов для нескольких систем на Python.",
+  job2Company:"АО «ММК Мосинтраст», Москва",job2Role:"Руководитель проектов",job2a:"Управление проектами капитального строительства и ремонта: от ТЗ до сдачи, координация с заказчиками и подрядчиками",job2b:"Анализ бизнес-процессов, подготовка ТЗ, бюджетов, графиков, карт рисков; стандартизация процессов",job2c:"Внедрил модуль 1С-Битрикс24 для подбора персонала и сократил время подбора ресурсов на 20%.",job2d:"Разработал единый реестр сроков, бюджетов и рисков. Более 20 проектов завершены в срок и в рамках бюджета.",job2e:"На основе анализа данных об адаптации оптимизировал онбординг и сократил срок выхода на продуктивность на 30%.",
+  job3Company:"Baker Hughes, «Газпром бурение», ERIELL, «Варьеганская НБК»",job3Role:"Ведущий инженер",job3a:"Аудит и испытания бурового оборудования, анализ эффективности производственных блоков, координация подразделений",job3b:"Организация строительства и пусконаладка буровых установок, контроль СМР",job3c:"Снизил объём внеплановых ремонтных работ на 20% за счёт программы оптимизации эксплуатации.",job3d:"Реализовал 15+ проектов аудита и диагностики оборудования, автоматизировал документооборот в 1С.",
+  casesTitle:"Кейсы из практики",casesIntro:"Кейсы по Process Mining, анализу логов и автоматизации.",caseOutcomeLabel:"Результат",
+  case1Tag:"Process Mining · КАСУД",case2Tag:"Python · Анализ логов",case1Title:"Ускорение согласований",case1P:"Анализ событийных логов помог найти узкие места в маршрутах согласования и определить точки улучшения.",case1a:"Выявлено 20+ узких мест",case1b:"Реализовано 50+ улучшений витрин и дашбордов",case1Outcome:"Среднее время согласования сократилось примерно на 5%",
+  case2Title:"Аудит SAP HCM",case2P:"Проверка использования z-транзакций по логам для выявления неиспользуемого функционала.",case2a:"Проверено 400+ транзакций",case2c:"Результат анализа помогает принимать решения об оптимизации",case2Outcome:"У 27% транзакций не было использования более 6 месяцев",
+  case3Tag:"Аналитика · Внутренний продукт",case3Title:"Аудит корпоративного портала",case3P:"Анализ активности сотрудников и проектирование дашборда метрик в Process Mining.",case3a:"Охват — 500+ сотрудников",case3b:"Отслеживаемые метрики расширены с 10 до 30+",case3Outcome:"Вовлечённость выросла на 20%",
+  case4Title:"Автоматизация анализа логов",case4P:"Повторяемый анализ логов для нескольких систем вместо ручной многодневной проверки.",case4a:"Автоматизировано для 5+ систем",case4c:"SQL и Python/Pandas для обработки и проверки данных",case4Outcome:"Время анализа сократилось с нескольких дней до 3–4 часов",
+  projectsTitle:"Личные проекты",projectsIntro:"Практические проекты по аналитике данных, SQL, DWH, облачной инфраструктуре, контейнеризации и подготовке аналитиков.",
+  proj1P:"Практические проекты по EDA на Python, финтех-SQL, Airflow ETL и локальному BI-стеку.",proj2P:"Демо-платформа для розничной сети на синтетических данных (~10 000 заказов). PostgreSQL, Airflow и dbt подготавливают данные для аналитики в ClickHouse и Metabase; инфраструктура развёрнута на Cloud.ru.",proj3P:"Compose-стек для аналитики кредитного риска и практики SQL/dbt: PostgreSQL, Airflow, Metabase, Grafana, n8n, Node-RED и Qdrant.",openRepo:"Открыть репозиторий ↗",
+  sqlProof:"SQL-паттерны · Практические задания · Интервью",analystProof:"11 разделов · 63 темы · 710 вопросов",footer:"© 2026 Артур Минин · Data Analyst / Analytics Engineer",trainerTag:"Подготовка к собеседованию",sqlTrainerTitle:"SQL практикум",sqlTrainerP:"Теория, практика и симулятор собеседования по SQL. Работает в браузере без бэкенда.",openTrainer:"Открыть тренажёр ↗",analystTrainerTag:"Подготовка аналитиков",analystTrainerTitle:"Становись умнее",analystTrainerP:"710 вопросов по SQL, Python, DWH, Big Data, аналитике, инструментам и soft skills. Работает в браузере без сервера.",
+  skillsTitle:"Ключевые навыки",skillData:"Data & Analytics",skillBI:"BI & Dashboards",skillDE:"Analytics Engineering",skillTools:"Tools & AI",skillBA:"Бизнес-анализ",skillBA1:"Сбор требований",skillBA2:"Интервью",skillBA5:"Технические задания",skillModel:"Моделирование",skillAnalystTools:"Инструменты аналитика",skillMethods:"Методологии",skillMethodSDD:"SDD — разработка на основе спецификаций",skillIndustrial:"Промышленные системы",skill1C:"1С ERP",skillMES:"MES / АСУ ТП",skillAudit:"Аудит ИС",verified:"Подтверждено на HeadHunter",stats:"Математическая статистика",
+  educationTitle:"Образование и курсы",education:"Образование",courses:"Курсы",edu1:"2024 — МИРБИС, MBA, Маркетинг-менеджмент",edu2:"2015 — Государственный педагогический университет — Бухучёт, анализ и аудит",edu3:"2011 — Государственный технический университет — Инженер-механик",course1:"2025 — Skillbox — Продюсер онлайн-курсов с нуля до PRO",course2:"2022 — Университет ИИ — Data Science, ML, Python (NumPy/Pandas/Matplotlib/Seaborn)",course3:"2017 — Мой бизнес Югра — Социальное предпринимательство",
+  toolkitTitle:"Рабочий инструментарий",toolkitIntro:"Среда и библиотеки для анализа, разработки и автоматизации.",tool1Title:"Python и данные",tool2Title:"Визуализация и ML",tool2P:"Исследование данных, графики, статистика и модели.",tool3Title:"Документы и интеграции",tool3P:"Обработка таблиц, PDF, веб-данных и API.",tool4Title:"AI и разработка",tool4P:"Инструменты для исследования, автоматизации и работы с моделями.",
+  aiWorkflow:"AI workflow",aiTitle:"Ассистенты, агенты и разработка с AI",aiP:"Использую prompt engineering, RAG, MCP и agent harnesses — среды для запуска и проверки AI-агентов. Для автоматизации применяю n8n и Ollama, результаты проверяю перед использованием.",aiModels:"Ассистенты и модели",aiCode:"AI для кода",aiAgents:"Агенты и интеграции",aiAgentsList:"RAG · MCP · n8n · Ollama · AI-агенты и ассистенты",
+  contactTitle:"Обсудим, как превратить данные в результат?",contactText:"Готов подключиться к задачам аналитики, BI, DWH, Data Quality и оптимизации процессов. Открыт к позициям Data Analyst, BI Analyst и Analytics Engineer.",telegram:"Написать в Telegram",email:"Написать на email",detailsTitle:"Контакты и дополнительная информация",detailsText:"Готов к удалённой или гибридной работе, а также к офису в Москве.",location:"Москва, Россия",additional:"Дополнительно",citizenship:"Гражданство: РФ",languages:"Языки: русский — родной, английский — B1",workMode:"Гибрид / офис",hhLink:"Резюме на hh.ru ↗"
+},
+en:{
+  brandName:"ARTUR MININ",personName:"Artur Minin",mobileNavLabel:"Mobile navigation",evidenceLabel:"Key results",verifiedLabel:"Skills verified on HeadHunter",
+  pageTitle:"Artur Minin | Data Analyst / Analytics Engineer",
+  pageDescription:"Portfolio of Artur Minin — Data Analyst / Analytics Engineer, SQL, Python, BI, DWH, Data Quality, Process Mining.",
+  skip:"Skip to content",
+  navAbout:"About",navCases:"Cases",navProjects:"Projects",navSkills:"Stack",navContacts:"Contact",resumeShort:"Resume ↗",
+  role:"Data Analyst · Analytics Engineer",
+  heroStack:"I help uncover growth opportunities through data, processes, and BI",
+  scroll:"scroll",
+  heroSummary:"Data analyst at the intersection of analytics, processes and IT. I extract, clean and analyze data, and build data marts and dashboards. I automate checks and build a data-driven approach using SQL, Python, BI and Process Mining.",
+  heroProof1Strong:"3+ years",heroProof1Text:"Data Analyst / Business Analyst",heroProof2Strong:"10+ years",heroProof2Text:"of professional experience",heroProof3Strong:"SQL · Python · BI · DWH",heroProof3Text:"My core stack continues to grow in breadth and depth.",
+  experienceLink:"Experience",viewCases:"View cases",resumePdf:"Resume PDF ↗",featuredRepos:"Featured repositories",repoData:"Data projects:",repoCloud:"Cloud:",repoDocker:"Docker:",
+  aboutTitle:"About me",
+  aboutP1:"I work with SQL and Python: I extract, clean and analyze data, validate data quality and the business logic of analytical marts. I build analytical marts and interactive dashboards in Power BI, Tableau and Metabase.",
+  aboutP2:"I have hands-on experience in event-log analysis and Process Mining: I identify bottlenecks, model processes and help find improvement points. I combine technical analytics with project and engineering experience — I gather requirements, formalize tasks and translate business goals into metrics, solutions and tasks for Data Engineering.",
+  aboutFact1Title:"Technical analytics",aboutFact1Text:"SQL, Python, Data Quality, data marts and BI dashboards.",aboutFact2Title:"Process analysis",aboutFact2Text:"Process Mining, BPMN, AS-IS / TO-BE, bottleneck analysis.",aboutFact3Title:"Business–IT alignment",aboutFact3Text:"Requirements, metrics, task definition and team communication.",aboutFact4Title:"Analytics Engineering",aboutFact4Text:"PostgreSQL, ClickHouse, Airflow, dbt, Docker and DWH practices.",
+  ev1:"employees covered in the corporate portal case",ev2:"SAP HCM z-transactions reviewed",ev3:"bottlenecks identified in the approval process",ev4:"analysis time instead of several days",evMetric4:"3–4 hrs",
+  experienceTitle:"Experience",job1Company:"Nornickel Sputnik LLC, Zheldorremmash JSC, Moscow",job1Role:"Data Analyst / Business Analyst",job1Period:"09.2024 – 02.2026 · 1 yr 6 mos",job2Period:"04.2022 – 09.2024 · 2 yrs 6 mos",job3Period:"07.2015 – 03.2022 · 6 yrs 9 mos",
+  job1a:"ETL: extracted, cleaned and transformed data from internal sources using SQL and Python/Pandas; searched for anomalies and insights",job1b:"Data Quality control and validation of business logic in analytical marts",job1c:"Power BI / Tableau / Metabase dashboards for different management levels",job1d:"Process Mining: event-log analysis and deviation detection",achievements:"Key achievements:",
+  job1e:"Designed a Process Mining metrics dashboard for a corporate portal.",
+  job1f:"Audited SAP HCM z-transaction usage with Python and prepared findings to inform optimization decisions.",
+  job1h:"Automated repeatable log analysis across several systems with Python.",
+  job2Company:"MMK Mosintrust JSC, Moscow",job2Role:"Project Manager",job2a:"Managed capital construction and repair projects from requirements to delivery; coordinated customers and contractors",job2b:"Analyzed business processes; prepared requirements, budgets, schedules and risk maps; standardized processes",job2c:"Implemented a 1C-Bitrix24 recruitment module and reduced resource-search time by 20%.",job2d:"Created a unified register of deadlines, budgets and risks. More than 20 projects were completed on time and within budget.",job2e:"Optimized onboarding based on adaptation data and reduced time to productivity by 30%.",
+  job3Company:"Baker Hughes, Gazprom Drilling, ERIELL, Varyeganskaya NBK",job3Role:"Lead Engineer",job3a:"Audited and tested drilling equipment, analyzed production-unit efficiency and coordinated departments",job3b:"Organized construction and commissioning of drilling rigs and supervised construction works",job3c:"Reduced unplanned repair work by 20% through an operations optimization program.",job3d:"Delivered 15+ equipment audit and diagnostics projects and automated document workflow in 1C.",
+  casesTitle:"Selected cases",casesIntro:"Cases covering Process Mining, log analysis and automation.",caseOutcomeLabel:"Outcome",
+  case1Tag:"Process Mining · KASUD",case2Tag:"Python · Log analysis",case1Title:"Approval process optimization",case1P:"Event-log analysis helped identify bottlenecks in approval routes and define improvement points.",case1a:"20+ bottlenecks identified",case1b:"50+ improvements to analytical marts and dashboards implemented",case1Outcome:"Average approval time reduced by approximately 5%",
+  case2Title:"SAP HCM audit",case2P:"Analyzed z-transaction usage logs to identify unused functionality.",case2a:"400+ transactions reviewed",case2c:"The analysis supported decisions about system optimization",case2Outcome:"27% of transactions had not been used for more than six months",
+  case3Tag:"Analytics · Internal product",case3Title:"Corporate portal audit",case3P:"Analyzed employee activity and designed a Process Mining metrics dashboard.",case3a:"500+ employees covered",case3b:"Tracked metrics expanded from 10 to 30+",case3Outcome:"Engagement increased by 20%",
+  case4Title:"Automated log analysis",case4P:"Repeatable log analysis for several systems instead of a manual multi-day review.",case4a:"Automated for 5+ systems",case4c:"SQL and Python/Pandas for data processing and validation",case4Outcome:"Analysis time fell from several days to 3–4 hours",
+  projectsTitle:"Selected projects",projectsIntro:"Practical projects covering data analytics, SQL, DWH, cloud infrastructure, containerization and analyst training.",
+  proj1P:"Hands-on projects in Python EDA, fintech SQL, Airflow ETL, and local BI stacks.",proj2P:"Demo retail analytics platform built on synthetic data (~10,000 orders). PostgreSQL, Airflow and dbt prepare data for analytics in ClickHouse and Metabase; infrastructure is deployed on Cloud.ru.",proj3P:"A Docker Compose stack for credit-risk analytics and SQL/dbt practice, with PostgreSQL, Airflow, Metabase, Grafana, n8n, Node-RED, and Qdrant.",openRepo:"Open repository ↗",
+  sqlProof:"SQL patterns · Practice tasks · Interview",analystProof:"11 sections · 63 topics · 710 questions",footer:"© 2026 Artur Minin · Data Analyst / Analytics Engineer",trainerTag:"Interview preparation",sqlTrainerTitle:"SQL Practice",sqlTrainerP:"SQL theory, practice tasks and an interview simulator. Runs in the browser without a backend.",openTrainer:"Open trainer ↗",analystTrainerTag:"Analyst training",analystTrainerTitle:"Get Smarter",analystTrainerP:"710 questions covering SQL, Python, DWH, Big Data, analytics, tools and soft skills. Runs in the browser without a server.",
+  skillsTitle:"Key skills",skillData:"Data & Analytics",skillBI:"BI & Dashboards",skillDE:"Analytics Engineering",skillTools:"Tools & AI",skillBA:"Business Analysis",skillBA1:"Requirements gathering",skillBA2:"Interviews",skillBA5:"Technical specifications",skillModel:"Process modeling",skillAnalystTools:"Analyst tools",skillMethods:"Methodologies",skillMethodSDD:"SDD — Spec-Driven Development",skillIndustrial:"Enterprise systems",skill1C:"1C ERP",skillMES:"MES / ICS",skillAudit:"IS audit",verified:"Verified on HeadHunter",stats:"Mathematical statistics",
+  educationTitle:"Education & courses",education:"Education",courses:"Courses",edu1:"2024 — MIRBIS, MBA, Marketing Management",edu2:"2015 — State Pedagogical University — Accounting, Analysis and Audit",edu3:"2011 — State Technical University — Mechanical Engineering",course1:"2025 — Skillbox — Online Course Producer, from Zero to PRO",course2:"2022 — University of AI — Data Science, ML, Python (NumPy/Pandas/Matplotlib/Seaborn)",course3:"2017 — My Business Yugra — Social Entrepreneurship",
+  toolkitTitle:"Working toolkit",toolkitIntro:"Environment and libraries for analysis, development and automation.",tool1Title:"Python & data",tool2Title:"Visualization & ML",tool2P:"Data exploration, visualization, statistics and models.",tool3Title:"Documents & integrations",tool3P:"Processing spreadsheets, PDFs, web data and APIs.",tool4Title:"AI & development",tool4P:"Tools for research, automation and working with models.",
+  aiWorkflow:"AI workflow",aiTitle:"Assistants, agents and AI-assisted development",aiP:"I use prompt engineering, RAG, MCP and agent harnesses — environments for running and validating AI agents. I use n8n and Ollama for automation and validate outputs before use.",aiModels:"Assistants & models",aiCode:"AI for coding",aiAgents:"Agents & integrations",aiAgentsList:"RAG · MCP · n8n · Ollama · AI agents and assistants",
+  contactTitle:"Shall we turn your data into better decisions?",contactText:"I can contribute to analytics, BI, DWH, Data Quality and process improvement. Open to Data Analyst, BI Analyst and Analytics Engineer roles.",telegram:"Message me on Telegram",email:"Send an email",detailsTitle:"Contact & additional information",detailsText:"Open to remote or hybrid work, as well as office-based roles in Moscow.",location:"Moscow, Russia",additional:"Additional information",citizenship:"Citizenship: Russian Federation",languages:"Languages: Russian — native, English — B1",workMode:"Hybrid / office",hhLink:"Resume on hh.ru ↗"
+}
+};
 
-        <section id="toolkit">
-            <div class="container">
-                <div class="section-header">
-                    <h2>Рабочий инструментарий</h2>
-                    <p>Среда и библиотеки для ежедневного анализа, разработки и автоматизации.</p>
-                </div>
-                <div class="toolkit-grid">
-                    <article class="toolkit-card">
-                        <span class="toolkit-index">01</span>
-                        <h3>Python и данные</h3>
-                        <p>VS Code · Jupyter Notebook · Git</p>
-                        <div class="tool-tags"><span>pandas</span><span>NumPy</span><span>SciPy</span><span>SQLAlchemy</span><span>psycopg2</span></div>
-                    </article>
-                    <article class="toolkit-card">
-                        <span class="toolkit-index">02</span>
-                        <h3>Визуализация и ML</h3>
-                        <p>Исследование данных, графики, статистика и модели.</p>
-                        <div class="tool-tags"><span>Matplotlib</span><span>Seaborn</span><span>Plotly</span><span>HoloViews</span><span>Bokeh</span><span>scikit-learn</span><span>statsmodels</span><span>NLTK</span></div>
-                    </article>
-                    <article class="toolkit-card">
-                        <span class="toolkit-index">03</span>
-                        <h3>Документы и интеграции</h3>
-                        <p>Обработка таблиц, PDF, веб-данных и API.</p>
-                        <div class="tool-tags"><span>openpyxl</span><span>python-docx</span><span>pdfplumber</span><span>PyMuPDF</span><span>Requests</span><span>HTTPX</span><span>BeautifulSoup</span></div>
-                    </article>
-                    <article class="toolkit-card">
-                        <span class="toolkit-index">04</span>
-                        <h3>AI и разработка</h3>
-                        <p>Инструменты для исследования, автоматизации и работы с моделями.</p>
-                        <div class="tool-tags"><span>PyTorch</span><span>Whisper</span><span>LangChain</span><span>RAG</span><span>MCP</span><span>n8n</span><span>Ollama</span></div>
-                    </article>
-                </div>
+const langKey="portfolioLang";
+const themeKey="portfolioTheme";
+let currentLang=localStorage.getItem(langKey)||"ru";
+let currentTheme=localStorage.getItem(themeKey);
+if(!currentTheme){
+  currentTheme=window.matchMedia&&window.matchMedia("(prefers-color-scheme: dark)").matches?"dark":"light";
+}
+document.documentElement.dataset.theme=currentTheme;
 
-                <div class="ai-workflow">
-                    <div>
-                        <span class="eyebrow-light">AI workflow</span>
-                        <h3>Ассистенты, агенты и разработка с AI</h3>
-                        <p>Использую prompt engineering, RAG, MCP и agent harnesses – среды для запуска и проверки AI-агентов. Для автоматизации применяю n8n и Ollama, результаты проверяю перед использованием.</p>
-                    </div>
-                    <div class="ai-tools">
-                        <div><strong>Ассистенты и модели</strong><span>Claude · ChatGPT · Perplexity · Qwen · DeepSeek · GigaChat · Grok · Mistral · NotebookLM</span></div>
-                        <div><strong>AI для кода</strong><span>Qwen Coder · OpenCode · OpenClaw · Giga Code · GitHub Copilot</span></div>
-                        <div><strong>Агенты и интеграции</strong><span>RAG · MCP · n8n · Ollama · AI-агенты и ассистенты</span></div>
-                    </div>
-                </div>
-            </div>
-        </section>
+function applyLanguage(lang){
+  currentLang=lang;
+  const t=translations[lang];
+  document.documentElement.lang=lang;
+  document.title=t.pageTitle;
+  document.querySelector('meta[name="description"]').setAttribute("content",t.pageDescription);
+  document.querySelectorAll("[data-i18n]").forEach(el=>{
+    const key=el.dataset.i18n;
+    if(t[key]!==undefined) el.textContent=t[key];
+  });
+  document.querySelectorAll("[data-i18n-aria-label]").forEach(el=>{
+    const key=el.dataset.i18nAriaLabel;
+    if(t[key]!==undefined) el.setAttribute("aria-label",t[key]);
+  });
+  document.getElementById("langToggle").textContent=lang==="ru"?"EN":"RU";
+  document.getElementById("langToggle").setAttribute("aria-label",lang==="ru"?"Switch to English":"Переключить на русский");
+  localStorage.setItem(langKey,lang);
+}
 
-        <section id="contacts">
-            <div class="container">
-                <div class="section-header">
-                    <h2>Контакты</h2>
-                </div>
+function applyTheme(theme){
+  currentTheme=theme;
+  document.documentElement.dataset.theme=theme;
+  const b=document.getElementById("themeToggle");
+  b.textContent=theme==="dark"?"☀":"☾";
+  b.setAttribute("aria-label",theme==="dark"?"Switch to light theme":"Switch to dark theme");
+  localStorage.setItem(themeKey,theme);
+}
 
-                <div class="contact-wrap">
-                    <div class="card">
-                        <p>Рассматриваю позиции Data Analyst и Analytics Engineer. Интересны задачи в аналитике, BI, data engineering и оптимизации процессов. Готов к удалённой или гибридной работе, а также к офису в Москве.</p>
-                        <div class="contact-list">
-                            <div class="contact-item">
-                                <span class="contact-badge">T</span>
-                                <a href="tel:+79822167848">+7 (982) 216-78-48</a>
-                            </div>
-                            <div class="contact-item">
-                                <span class="contact-badge">✉</span>
-                                <a href="mailto:iamartur1111@gmail.com">iamartur1111@gmail.com</a>
-                            </div>
-                            <div class="contact-item">
-                                <span class="contact-badge">TG</span>
-                                <a href="https://t.me/Artur_Min" target="_blank" rel="noreferrer">@Artur_Min</a>
-                            </div>
-                            <div class="contact-item">
-                                <span class="contact-badge">📍</span>
-                                <span>Москва, Россия</span>
-                            </div>
-                        </div>
-                    </div>
+document.getElementById("langToggle").addEventListener("click",()=>applyLanguage(currentLang==="ru"?"en":"ru"));
+document.getElementById("themeToggle").addEventListener("click",()=>applyTheme(currentTheme==="dark"?"light":"dark"));
 
-                    <div class="card">
-                        <h3 style="margin-bottom: 14px; color: var(--primary-dark);">Дополнительно</h3>
-                        <ul style="list-style: none; display: grid; gap: 10px; color: var(--text-light);">
-                            <li>Гражданство: РФ</li>
-                            <li>Языки: русский – родной, английский – B1</li>
-                            <li>Гибрид/офис</li>
-                            <li>GitHub: github.com/MartinMinart</li>
-                        </ul>
-                    </div>
-                </div>
-            </div>
-        </section>
-    </main>
+const menuToggle=document.getElementById("menuToggle");
+const mobileMenu=document.getElementById("mobileMenu");
+const experienceSection=document.getElementById("experience");
+experienceSection.before(document.getElementById("cases"),document.getElementById("projects"));
+menuToggle.addEventListener("click",()=>{
+  const open=!mobileMenu.classList.contains("open");
+  mobileMenu.classList.toggle("open",open);
+  menuToggle.setAttribute("aria-expanded",String(open));
+  menuToggle.textContent=open?"×":"☰";
+});
+mobileMenu.querySelectorAll("a").forEach(a=>a.addEventListener("click",()=>{
+  mobileMenu.classList.remove("open");
+  menuToggle.setAttribute("aria-expanded","false");
+  menuToggle.textContent="☰";
+}));
 
-    <footer>
-        © 2026 Артур Минин · Data Analyst / Analytics Engineer
-    </footer>
+const navLinks=[...document.querySelectorAll(".site-nav a[data-nav]")];
+const sections=["about","cases","projects","skills","contacts"].map(id=>document.getElementById(id)).filter(Boolean);
+const observer=new IntersectionObserver(entries=>{
+  entries.forEach(entry=>{
+    if(entry.isIntersecting){
+      navLinks.forEach(link=>link.classList.toggle("active",link.dataset.nav===entry.target.id));
+    }
+  });
+},{rootMargin:"-35% 0px -55% 0px",threshold:0});
+sections.forEach(s=>observer.observe(s));
+
+applyLanguage(currentLang);
+applyTheme(currentTheme);
+</script>
 </body>
 </html>
