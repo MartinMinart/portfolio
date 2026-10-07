@@ -3,11 +3,16 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<meta name="description" content="Портфолио Артура Минина — Data Analyst / Analytics Engineer, SQL, Python, BI, DWH, Data Quality, Process Mining.">
+<meta name="description" content="Портфолио Артура Минина – Data Analyst / Analytics Engineer, SQL, Python, BI, DWH, Data Quality, Process Mining.">
 <meta property="og:type" content="website">
 <meta property="og:url" content="https://martinminart.github.io/portfolio/">
-<meta property="og:title" content="Артур Минин — Data Analyst / Analytics Engineer">
-<meta property="og:description" content="Кейсы и проекты по аналитике данных, SQL, Python, BI, DWH, Data Quality и Process Mining.">
+<meta property="og:title" content="Артур Минин | Data Analyst / Analytics Engineer">
+<meta property="og:description" content="Портфолио аналитика данных: кейсы по анализу данных, SQL, Python, BI, бизнес-процессам и Process Mining.">
+<meta property="og:site_name" content="Портфолио Артура Минина">
+
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="Артур Минин | Data Analyst / Analytics Engineer">
+<meta name="twitter:description" content="Кейсы по анализу данных, SQL, Python, BI и оптимизации бизнес-процессов.">
 <meta name="theme-color" content="#176657">
 <link rel="canonical" href="https://martinminart.github.io/portfolio/">
 <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='14' fill='%23176657'/%3E%3Ctext x='32' y='46' text-anchor='middle' font-family='Arial,sans-serif' font-size='42' font-weight='700' fill='%23fff'%3EA%3C/text%3E%3C/svg%3E">
@@ -18,12 +23,14 @@
   --bg:#f5f6f3;--card-bg:#fff;--text:#18231f;--text-light:#66716c;
   --border:#dfe5e1;--accent:#c27c55;--shadow:rgba(24,35,31,.07);
   --hero-bg:#edf6f1;--footer-bg:#e8f1ed;--chip:#f1f5f9;--input-bg:#fff;
+  --focus-ring:#c27c55;
 }
 [data-theme="dark"]{
   --primary:#69c8ad;--primary-dark:#9ae1ca;--primary-soft:#183a33;
   --bg:#0f1715;--card-bg:#16211e;--text:#edf5f2;--text-light:#aabbb6;
   --border:#2a3935;--accent:#e1a27d;--shadow:rgba(0,0,0,.25);
   --hero-bg:#13251f;--footer-bg:#13211d;--chip:#1d2a27;--input-bg:#16211e;
+  --focus-ring:#e1a27d;
 }
 *{box-sizing:border-box;margin:0;padding:0}
 html{scroll-behavior:smooth;scroll-padding-top:84px}
@@ -33,8 +40,8 @@ a{color:inherit}
 button{font:inherit}
 .container{max-width:1100px;margin:0 auto;padding:0 20px;width:100%}
 .skip-link{position:fixed;left:16px;top:-60px;z-index:3000;padding:10px 14px;background:var(--primary-dark);color:#fff;border-radius:8px;text-decoration:none;font-weight:700}
-.skip-link:focus{top:16px}
-:focus-visible{outline:3px solid var(--accent);outline-offset:3px}
+.skip-link:focus-visible{top:16px;outline:3px solid var(--focus-ring);outline-offset:3px}
+:focus-visible{outline:3px solid var(--focus-ring);outline-offset:3px}
 
 /* Sticky navigation */
 .site-header{position:sticky;top:0;z-index:2000;background:color-mix(in srgb,var(--bg) 88%,transparent);backdrop-filter:blur(14px);-webkit-backdrop-filter:blur(14px);border-bottom:1px solid var(--border)}
@@ -556,7 +563,7 @@ body.menu-open{overflow:hidden}
         <h3 data-i18n="case3Title">Аудит корпоративного портала</h3>
         <p data-i18n="case3P">Анализ активности сотрудников и проектирование дашборда метрик в Process Mining.</p>
         <ul>
-          <li data-i18n="case3a">Охват — 500+ сотрудников</li>
+          <li data-i18n="case3a">Охват – 500+ сотрудников</li>
           <li data-i18n="case3b">Отслеживаемые метрики расширены с 10 до 30+</li>
         </ul>
         <div class="case-outcome"><span data-i18n="caseOutcomeLabel">Результат</span><strong data-i18n="case3Outcome">Вовлечённость выросла на 20%</strong></div>
@@ -573,6 +580,19 @@ body.menu-open{overflow:hidden}
         </ul>
         <div class="case-outcome"><span data-i18n="caseOutcomeLabel">Результат</span><strong data-i18n="case4Outcome">Время анализа сократилось с нескольких дней до 3–4 часов</strong></div>
         <div class="tech-stack"><span class="tech-badge">Python</span><span class="tech-badge">Pandas</span><span class="tech-badge">SQL</span></div>
+      </article>
+
+      <article class="project-card">
+        <span class="project-tag" data-i18n="case5Tag">Python · Pandas · Plotly.js</span>
+        <h3 data-i18n="case5Title">Аналитика пользовательской активности корпсервиса</h3>
+        <p data-i18n="case5P">Интерактивный веб-дашборд для исследования активности пользователей.</p>
+        <ul>
+          <li data-i18n="case5a">45 961 событие за 7 дней</li>
+          <li data-i18n="case5b">20 418 пользователей в агрегированной выборке</li>
+        </ul>
+        <div class="case-outcome"><span data-i18n="caseOutcomeLabel">РЕЗУЛЬТАТ</span><strong data-i18n="case5Outcome">Рабочий интерактивный дашборд для анализа данных</strong></div>
+        <div class="tech-stack"><span class="tech-badge">Python</span><span class="tech-badge">Pandas</span><span class="tech-badge">Plotly.js</span><span class="tech-badge">HTML/CSS</span><span class="tech-badge">JavaScript</span></div>
+        <a class="project-link" href="https://martinminart.github.io/portfolio_ayditIS/" target="_blank" rel="noopener noreferrer" data-i18n="case5Link">Открыть дашборд ↗</a>
       </article>
 
     </div>
@@ -605,7 +625,7 @@ body.menu-open{overflow:hidden}
       <article class="project-card">
         <span class="project-tag">Analytics Stack · Credit Risk</span>
         <h3>Docker experiments</h3>
-        <p data-i18n="proj3P">Docker Compose-среда для практики SQL/dbt и аналитики кредитного риска: PostgreSQL, Airflow, Metabase, Grafana, n8n, Node-RED и Qdrant.</p>
+        <p data-i18n="proj3P">Docker Compose-среда для практики SQL/dbt и аналитики кредитного риска: PostgreSQL, Airflow, Metabase, Grafana, Node-RED и Qdrant.</p>
         <a class="project-link" href="https://github.com/MartinMinart/docker-experiments" target="_blank" rel="noopener noreferrer" data-i18n="openRepo">Открыть репозиторий ↗</a>
       </article>
 
@@ -675,7 +695,7 @@ body.menu-open{overflow:hidden}
 
       <div class="skill-category">
         <h3 data-i18n="skillMethods">Методологии</h3>
-        <ul><li>Agile</li><li>Scrum</li><li>Waterfall</li><li>Lean</li><li>Kanban</li><li data-i18n="skillMethodSDD">SDD — разработка на основе спецификаций</li></ul>
+        <ul><li>Agile</li><li>Scrum</li><li>Waterfall</li><li>Lean</li><li>Kanban</li><li data-i18n="skillMethodSDD">SDD – разработка на основе спецификаций</li></ul>
       </div>
 
       <div class="skill-category">
@@ -699,17 +719,17 @@ body.menu-open{overflow:hidden}
       <div class="meta-card">
         <h3 data-i18n="education">Образование</h3>
         <ul>
-          <li data-i18n="edu1">2024 — МИРБИС, MBA, Маркетинг-менеджмент</li>
-          <li data-i18n="edu2">2015 — Государственный педагогический университет — Бухучёт, анализ и аудит</li>
-          <li data-i18n="edu3">2011 — Государственный технический университет — Инженер-механик</li>
+          <li data-i18n="edu1">2024 – МИРБИС, MBA, Маркетинг-менеджмент</li>
+          <li data-i18n="edu2">2015 – Государственный педагогический университет – Бухучёт, анализ и аудит</li>
+          <li data-i18n="edu3">2011 – Государственный технический университет – Инженер-механик</li>
         </ul>
       </div>
       <div class="meta-card">
         <h3 data-i18n="courses">Курсы</h3>
         <ul>
-          <li data-i18n="course1">2025 — Skillbox — Продюсер онлайн-курсов с нуля до PRO</li>
-          <li data-i18n="course2">2022 — Университет ИИ — Data Science, ML, Python (NumPy/Pandas/Matplotlib/Seaborn)</li>
-          <li data-i18n="course3">2017 — Мой бизнес Югра — Социальное предпринимательство</li>
+          <li data-i18n="course1">2025 – Skillbox – Продюсер онлайн-курсов с нуля до PRO</li>
+          <li data-i18n="course2">2022 – Университет ИИ – Data Science, ML, Python (NumPy/Pandas/Matplotlib/Seaborn)</li>
+          <li data-i18n="course3">2017 – Мой бизнес Югра – Социальное предпринимательство</li>
         </ul>
       </div>
     </div>
@@ -732,7 +752,7 @@ body.menu-open{overflow:hidden}
       <div>
         <span class="eyebrow-light">AI workflow</span>
         <h3 data-i18n="aiTitle">Ассистенты, агенты и разработка с AI</h3>
-        <p data-i18n="aiP">Использую prompt engineering, RAG, MCP и agent harnesses — среды для запуска и проверки AI-агентов. Для автоматизации применяю n8n и Ollama, результаты проверяю перед использованием.</p>
+        <p data-i18n="aiP">Использую prompt engineering, RAG, MCP и agent harnesses – среды для запуска и проверки AI-агентов.</p>
       </div>
       <div class="ai-tools">
         <div><strong data-i18n="aiModels">Ассистенты и модели</strong><span>Claude · ChatGPT · Perplexity · Qwen · DeepSeek · GigaChat · Grok · Mistral · NotebookLM</span></div>
@@ -775,7 +795,7 @@ body.menu-open{overflow:hidden}
         <h3 data-i18n="additional">Дополнительно</h3>
         <ul style="list-style:none;display:grid;gap:10px;color:var(--text-light);margin-top:14px">
           <li data-i18n="citizenship">Гражданство: РФ</li>
-          <li data-i18n="languages">Языки: русский — родной, английский — B1</li>
+          <li data-i18n="languages">Языки: русский – родной, английский – B1</li>
           <li data-i18n="workMode">Гибрид / офис</li>
           <li>GitHub: github.com/MartinMinart</li>
         </ul>
@@ -793,7 +813,7 @@ const translations = {
   ru:{
   brandName:"АРТУР МИНИН",personName:"Артур Минин",mobileNavLabel:"Мобильная навигация",evidenceLabel:"Ключевые результаты",verifiedLabel:"Подтверждённые навыки на HeadHunter",
   pageTitle:"Артур Минин | Data Analyst / Analytics Engineer",
-  pageDescription:"Портфолио Артура Минина — Data Analyst / Analytics Engineer, SQL, Python, BI, DWH, Data Quality, Process Mining.",
+  pageDescription:"Портфолио Артура Минина – Data Analyst / Analytics Engineer, SQL, Python, BI, DWH, Data Quality, Process Mining.",
   skip:"Перейти к содержимому",
   navAbout:"Обо мне",navCases:"Кейсы",navProjects:"Проекты",navSkills:"Стек",navContacts:"Контакты",resumeShort:"Резюме ↗",
   role:"Data Analyst · Analytics Engineer",
@@ -804,7 +824,7 @@ const translations = {
   experienceLink:"Опыт работы",viewCases:"Смотреть кейсы",resumePdf:"Резюме PDF ↗",featuredRepos:"Избранные репозитории",repoData:"Data-проекты:",repoCloud:"Облако:",repoDocker:"Docker:",
   aboutTitle:"Обо мне",
   aboutP1:"Работаю с SQL и Python: извлекаю, очищаю и анализирую данные, проверяю качество данных и бизнес-логику витрин. Создаю аналитические витрины и интерактивные дашборды в Power BI, Tableau и Metabase.",
-  aboutP2:"Имею практический опыт анализа событийных логов и Process Mining: выявляю узкие места, моделирую процессы и помогаю находить точки для улучшения. Сочетаю техническую аналитику с опытом управления проектами и инженерии — собираю требования, формализую задачи и перевожу бизнес-цели в метрики, решения и задачи для Data Engineering.",
+  aboutP2:"Имею практический опыт анализа событийных логов и Process Mining: выявляю узкие места, моделирую процессы и помогаю находить точки для улучшения. Сочетаю техническую аналитику с опытом управления проектами и инженерии – собираю требования, формализую задачи и перевожу бизнес-цели в метрики, решения и задачи для Data Engineering.",
   aboutFact1Title:"Техническая аналитика",aboutFact1Text:"SQL, Python, Data Quality, витрины и BI-дашборды.",aboutFact2Title:"Анализ процессов",aboutFact2Text:"Process Mining, BPMN, AS-IS / TO-BE, поиск узких мест.",aboutFact3Title:"Связь бизнеса и IT",aboutFact3Text:"Требования, метрики, постановка задач и коммуникация с командами.",aboutFact4Title:"Analytics Engineering",aboutFact4Text:"PostgreSQL, ClickHouse, Airflow, dbt, Docker и DWH-подход.",
   ev1:"сотрудников в кейсе корпоративного портала",ev2:"SAP HCM z-транзакций проверено",ev3:"узких мест выявлено в процессе согласования",ev4:"время анализа вместо нескольких дней",evMetric4:"3–4 ч",
   experienceTitle:"Опыт работы",job1Company:"ООО «Норникель Спутник», АО «Желдорреммаш», Москва",job1Role:"Data Analyst / Бизнес-аналитик",job1Period:"09.2024 – 02.2026 · 1 год 6 мес.",job2Period:"04.2022 – 09.2024 · 2 года 6 мес.",job3Period:"07.2015 – 03.2022 · 6 лет 9 мес.",
@@ -817,21 +837,22 @@ const translations = {
   casesTitle:"Кейсы из практики",casesIntro:"Кейсы по Process Mining, анализу логов и автоматизации.",caseOutcomeLabel:"Результат",
   case1Tag:"Process Mining · КАСУД",case2Tag:"Python · Анализ логов",case1Title:"Ускорение согласований",case1P:"Анализ событийных логов помог найти узкие места в маршрутах согласования и определить точки улучшения.",case1a:"Выявлено 20+ узких мест",case1b:"Реализовано 50+ улучшений витрин и дашбордов",case1Outcome:"Среднее время согласования сократилось примерно на 5%",
   case2Title:"Аудит SAP HCM",case2P:"Проверка использования z-транзакций по логам для выявления неиспользуемого функционала.",case2a:"Проверено 400+ транзакций",case2c:"Результат анализа помогает принимать решения об оптимизации",case2Outcome:"У 27% транзакций не было использования более 6 месяцев",
-  case3Tag:"Аналитика · Внутренний продукт",case3Title:"Аудит корпоративного портала",case3P:"Анализ активности сотрудников и проектирование дашборда метрик в Process Mining.",case3a:"Охват — 500+ сотрудников",case3b:"Отслеживаемые метрики расширены с 10 до 30+",case3Outcome:"Вовлечённость выросла на 20%",
+  case3Tag:"Аналитика · Внутренний продукт",case3Title:"Аудит корпоративного портала",case3P:"Анализ активности сотрудников и проектирование дашборда метрик в Process Mining.",case3a:"Охват – 500+ сотрудников",case3b:"Отслеживаемые метрики расширены с 10 до 30+",case3Outcome:"Вовлечённость выросла на 20%",
   case4Title:"Автоматизация анализа логов",case4P:"Повторяемый анализ логов для нескольких систем вместо ручной многодневной проверки.",case4a:"Автоматизировано для 5+ систем",case4c:"SQL и Python/Pandas для обработки и проверки данных",case4Outcome:"Время анализа сократилось с нескольких дней до 3–4 часов",
+  case5Tag:"Python · Pandas · Plotly.js",case5Title:"Аналитика пользовательской активности корпсервиса",case5P:"Интерактивный веб-дашборд для исследования активности пользователей.",case5a:"45 961 событие за 7 дней",case5b:"20 418 пользователей в агрегированной выборке",case5Outcome:"Рабочий интерактивный дашборд для анализа данных",case5Link:"Открыть дашборд ↗",
   projectsTitle:"Личные проекты",projectsIntro:"Практические проекты по аналитике данных, SQL, DWH, облачной инфраструктуре, контейнеризации и подготовке аналитиков.",
   proj1P:"Практические проекты по EDA на Python, финтех-SQL, Airflow ETL и локальному BI-стеку.",proj2P:"Демо-платформа для розничной сети на синтетических данных (~10 000 заказов). PostgreSQL, Airflow и dbt подготавливают данные для аналитики в ClickHouse и Metabase; инфраструктура развёрнута на Cloud.ru.",proj3P:"Compose-стек для аналитики кредитного риска и практики SQL/dbt: PostgreSQL, Airflow, Metabase, Grafana, n8n, Node-RED и Qdrant.",openRepo:"Открыть репозиторий ↗",
   sqlProof:"SQL-паттерны · Практические задания · Интервью",analystProof:"11 разделов · 63 темы · 710 вопросов",footer:"© 2026 Артур Минин · Data Analyst / Analytics Engineer",trainerTag:"Подготовка к собеседованию",sqlTrainerTitle:"SQL практикум",sqlTrainerP:"Теория, практика и симулятор собеседования по SQL. Работает в браузере без бэкенда.",openTrainer:"Открыть тренажёр ↗",analystTrainerTag:"Подготовка аналитиков",analystTrainerTitle:"Становись умнее",analystTrainerP:"710 вопросов по SQL, Python, DWH, Big Data, аналитике, инструментам и soft skills. Работает в браузере без сервера.",
-  skillsTitle:"Ключевые навыки",skillData:"Data & Analytics",skillBI:"BI & Dashboards",skillDE:"Analytics Engineering",skillTools:"Tools & AI",skillBA:"Бизнес-анализ",skillBA1:"Сбор требований",skillBA2:"Интервью",skillBA5:"Технические задания",skillModel:"Моделирование",skillAnalystTools:"Инструменты аналитика",skillMethods:"Методологии",skillMethodSDD:"SDD — разработка на основе спецификаций",skillIndustrial:"Промышленные системы",skill1C:"1С ERP",skillMES:"MES / АСУ ТП",skillAudit:"Аудит ИС",verified:"Подтверждено на HeadHunter",stats:"Математическая статистика",
-  educationTitle:"Образование и курсы",education:"Образование",courses:"Курсы",edu1:"2024 — МИРБИС, MBA, Маркетинг-менеджмент",edu2:"2015 — Государственный педагогический университет — Бухучёт, анализ и аудит",edu3:"2011 — Государственный технический университет — Инженер-механик",course1:"2025 — Skillbox — Продюсер онлайн-курсов с нуля до PRO",course2:"2022 — Университет ИИ — Data Science, ML, Python (NumPy/Pandas/Matplotlib/Seaborn)",course3:"2017 — Мой бизнес Югра — Социальное предпринимательство",
+  skillsTitle:"Ключевые навыки",skillData:"Data & Analytics",skillBI:"BI & Dashboards",skillDE:"Analytics Engineering",skillTools:"Tools & AI",skillBA:"Бизнес-анализ",skillBA1:"Сбор требований",skillBA2:"Интервью",skillBA5:"Технические задания",skillModel:"Моделирование",skillAnalystTools:"Инструменты аналитика",skillMethods:"Методологии",skillMethodSDD:"SDD – разработка на основе спецификаций",skillIndustrial:"Промышленные системы",skill1C:"1С ERP",skillMES:"MES / АСУ ТП",skillAudit:"Аудит ИС",verified:"Подтверждено на HeadHunter",stats:"Математическая статистика",
+  educationTitle:"Образование и курсы",education:"Образование",courses:"Курсы",edu1:"2024 – МИРБИС, MBA, Маркетинг-менеджмент",edu2:"2015 – Государственный педагогический университет – Бухучёт, анализ и аудит",edu3:"2011 – Государственный технический университет – Инженер-механик",course1:"2025 – Skillbox – Продюсер онлайн-курсов с нуля до PRO",course2:"2022 – Университет ИИ – Data Science, ML, Python (NumPy/Pandas/Matplotlib/Seaborn)",course3:"2017 – Мой бизнес Югра – Социальное предпринимательство",
   toolkitTitle:"Рабочий инструментарий",toolkitIntro:"Среда и библиотеки для анализа, разработки и автоматизации.",tool1Title:"Python и данные",tool2Title:"Визуализация и ML",tool2P:"Исследование данных, графики, статистика и модели.",tool3Title:"Документы и интеграции",tool3P:"Обработка таблиц, PDF, веб-данных и API.",tool4Title:"AI и разработка",tool4P:"Инструменты для исследования, автоматизации и работы с моделями.",
-  aiWorkflow:"AI workflow",aiTitle:"Ассистенты, агенты и разработка с AI",aiP:"Использую prompt engineering, RAG, MCP и agent harnesses — среды для запуска и проверки AI-агентов. Для автоматизации применяю n8n и Ollama, результаты проверяю перед использованием.",aiModels:"Ассистенты и модели",aiCode:"AI для кода",aiAgents:"Агенты и интеграции",aiAgentsList:"RAG · MCP · n8n · Ollama · AI-агенты и ассистенты",
-  contactTitle:"Обсудим, как превратить данные в результат?",contactText:"Готов подключиться к задачам аналитики, BI, DWH, Data Quality и оптимизации процессов. Открыт к позициям Data Analyst, BI Analyst и Analytics Engineer.",telegram:"Написать в Telegram",email:"Написать на email",detailsTitle:"Контакты и дополнительная информация",detailsText:"Готов к удалённой или гибридной работе, а также к офису в Москве.",location:"Москва, Россия",additional:"Дополнительно",citizenship:"Гражданство: РФ",languages:"Языки: русский — родной, английский — B1",workMode:"Гибрид / офис",hhLink:"Резюме на hh.ru ↗"
+  aiWorkflow:"AI workflow",aiTitle:"Ассистенты, агенты и разработка с AI",aiP:"Использую prompt engineering, RAG, MCP и agent harnesses – среды для запуска и проверки AI-агентов. Для автоматизации применяю n8n и Ollama, результаты проверяю перед использованием.",aiModels:"Ассистенты и модели",aiCode:"AI для кода",aiAgents:"Агенты и интеграции",aiAgentsList:"RAG · MCP · n8n · Ollama · AI-агенты и ассистенты",
+  contactTitle:"Обсудим, как превратить данные в результат?",contactText:"Готов подключиться к задачам аналитики, BI, DWH, Data Quality и оптимизации процессов. Открыт к позициям Data Analyst, BI Analyst и Analytics Engineer.",telegram:"Написать в Telegram",email:"Написать на email",detailsTitle:"Контакты и дополнительная информация",detailsText:"Готов к удалённой или гибридной работе, а также к офису в Москве.",location:"Москва, Россия",additional:"Дополнительно",citizenship:"Гражданство: РФ",languages:"Языки: русский – родной, английский – B1",workMode:"Гибрид / офис",hhLink:"Резюме на hh.ru ↗"
 },
 en:{
   brandName:"ARTUR MININ",personName:"Artur Minin",mobileNavLabel:"Mobile navigation",evidenceLabel:"Key results",verifiedLabel:"Skills verified on HeadHunter",
   pageTitle:"Artur Minin | Data Analyst / Analytics Engineer",
-  pageDescription:"Portfolio of Artur Minin — Data Analyst / Analytics Engineer, SQL, Python, BI, DWH, Data Quality, Process Mining.",
+  pageDescription:"Portfolio of Artur Minin – Data Analyst / Analytics Engineer, SQL, Python, BI, DWH, Data Quality, Process Mining.",
   skip:"Skip to content",
   navAbout:"About",navCases:"Cases",navProjects:"Projects",navSkills:"Stack",navContacts:"Contact",resumeShort:"Resume ↗",
   role:"Data Analyst · Analytics Engineer",
@@ -842,7 +863,7 @@ en:{
   experienceLink:"Experience",viewCases:"View cases",resumePdf:"Resume PDF ↗",featuredRepos:"Featured repositories",repoData:"Data projects:",repoCloud:"Cloud:",repoDocker:"Docker:",
   aboutTitle:"About me",
   aboutP1:"I work with SQL and Python: I extract, clean and analyze data, validate data quality and the business logic of analytical marts. I build analytical marts and interactive dashboards in Power BI, Tableau and Metabase.",
-  aboutP2:"I have hands-on experience in event-log analysis and Process Mining: I identify bottlenecks, model processes and help find improvement points. I combine technical analytics with project and engineering experience — I gather requirements, formalize tasks and translate business goals into metrics, solutions and tasks for Data Engineering.",
+  aboutP2:"I have hands-on experience in event-log analysis and Process Mining: I identify bottlenecks, model processes and help find improvement points. I combine technical analytics with project and engineering experience – I gather requirements, formalize tasks and translate business goals into metrics, solutions and tasks for Data Engineering.",
   aboutFact1Title:"Technical analytics",aboutFact1Text:"SQL, Python, Data Quality, data marts and BI dashboards.",aboutFact2Title:"Process analysis",aboutFact2Text:"Process Mining, BPMN, AS-IS / TO-BE, bottleneck analysis.",aboutFact3Title:"Business–IT alignment",aboutFact3Text:"Requirements, metrics, task definition and team communication.",aboutFact4Title:"Analytics Engineering",aboutFact4Text:"PostgreSQL, ClickHouse, Airflow, dbt, Docker and DWH practices.",
   ev1:"employees covered in the corporate portal case",ev2:"SAP HCM z-transactions reviewed",ev3:"bottlenecks identified in the approval process",ev4:"analysis time instead of several days",evMetric4:"3–4 hrs",
   experienceTitle:"Experience",job1Company:"Nornickel Sputnik LLC, Zheldorremmash JSC, Moscow",job1Role:"Data Analyst / Business Analyst",job1Period:"09.2024 – 02.2026 · 1 yr 6 mos",job2Period:"04.2022 – 09.2024 · 2 yrs 6 mos",job3Period:"07.2015 – 03.2022 · 6 yrs 9 mos",
@@ -857,14 +878,15 @@ en:{
   case2Title:"SAP HCM audit",case2P:"Analyzed z-transaction usage logs to identify unused functionality.",case2a:"400+ transactions reviewed",case2c:"The analysis supported decisions about system optimization",case2Outcome:"27% of transactions had not been used for more than six months",
   case3Tag:"Analytics · Internal product",case3Title:"Corporate portal audit",case3P:"Analyzed employee activity and designed a Process Mining metrics dashboard.",case3a:"500+ employees covered",case3b:"Tracked metrics expanded from 10 to 30+",case3Outcome:"Engagement increased by 20%",
   case4Title:"Automated log analysis",case4P:"Repeatable log analysis for several systems instead of a manual multi-day review.",case4a:"Automated for 5+ systems",case4c:"SQL and Python/Pandas for data processing and validation",case4Outcome:"Analysis time fell from several days to 3–4 hours",
+  case5Tag:"Python · Pandas · Plotly.js",case5Title:"Corporate Service User Activity Analytics",case5P:"Interactive web dashboard for exploring user activity.",case5a:"45,961 events over 7 days",case5b:"20,418 users in the aggregated dataset",case5Outcome:"Interactive dashboard for data analysis",case5Link:"Open dashboard ↗",
   projectsTitle:"Selected projects",projectsIntro:"Practical projects covering data analytics, SQL, DWH, cloud infrastructure, containerization and analyst training.",
-  proj1P:"Hands-on projects in Python EDA, fintech SQL, Airflow ETL, and local BI stacks.",proj2P:"Demo retail analytics platform built on synthetic data (~10,000 orders). PostgreSQL, Airflow and dbt prepare data for analytics in ClickHouse and Metabase; infrastructure is deployed on Cloud.ru.",proj3P:"A Docker Compose stack for credit-risk analytics and SQL/dbt practice, with PostgreSQL, Airflow, Metabase, Grafana, n8n, Node-RED, and Qdrant.",openRepo:"Open repository ↗",
+  proj1P:"Hands-on projects in Python EDA, fintech SQL, Airflow ETL, and local BI stacks.",proj2P:"Demo retail analytics platform built on synthetic data (~10,000 orders). PostgreSQL, Airflow and dbt prepare data for analytics in ClickHouse and Metabase; infrastructure is deployed on Cloud.ru.",proj3P:"A Docker Compose stack for credit-risk analytics and SQL/dbt practice, with PostgreSQL, Airflow, Metabase, Grafana, Node-RED, and Qdrant.",openRepo:"Open repository ↗",
   sqlProof:"SQL patterns · Practice tasks · Interview",analystProof:"11 sections · 63 topics · 710 questions",footer:"© 2026 Artur Minin · Data Analyst / Analytics Engineer",trainerTag:"Interview preparation",sqlTrainerTitle:"SQL Practice",sqlTrainerP:"SQL theory, practice tasks and an interview simulator. Runs in the browser without a backend.",openTrainer:"Open trainer ↗",analystTrainerTag:"Analyst training",analystTrainerTitle:"Get Smarter",analystTrainerP:"710 questions covering SQL, Python, DWH, Big Data, analytics, tools and soft skills. Runs in the browser without a server.",
-  skillsTitle:"Key skills",skillData:"Data & Analytics",skillBI:"BI & Dashboards",skillDE:"Analytics Engineering",skillTools:"Tools & AI",skillBA:"Business Analysis",skillBA1:"Requirements gathering",skillBA2:"Interviews",skillBA5:"Technical specifications",skillModel:"Process modeling",skillAnalystTools:"Analyst tools",skillMethods:"Methodologies",skillMethodSDD:"SDD — Spec-Driven Development",skillIndustrial:"Enterprise systems",skill1C:"1C ERP",skillMES:"MES / ICS",skillAudit:"IS audit",verified:"Verified on HeadHunter",stats:"Mathematical statistics",
-  educationTitle:"Education & courses",education:"Education",courses:"Courses",edu1:"2024 — MIRBIS, MBA, Marketing Management",edu2:"2015 — State Pedagogical University — Accounting, Analysis and Audit",edu3:"2011 — State Technical University — Mechanical Engineering",course1:"2025 — Skillbox — Online Course Producer, from Zero to PRO",course2:"2022 — University of AI — Data Science, ML, Python (NumPy/Pandas/Matplotlib/Seaborn)",course3:"2017 — My Business Yugra — Social Entrepreneurship",
+  skillsTitle:"Key skills",skillData:"Data & Analytics",skillBI:"BI & Dashboards",skillDE:"Analytics Engineering",skillTools:"Tools & AI",skillBA:"Business Analysis",skillBA1:"Requirements gathering",skillBA2:"Interviews",skillBA5:"Technical specifications",skillModel:"Process modeling",skillAnalystTools:"Analyst tools",skillMethods:"Methodologies",skillMethodSDD:"SDD – Spec-Driven Development",skillIndustrial:"Enterprise systems",skill1C:"1C ERP",skillMES:"MES / ICS",skillAudit:"IS audit",verified:"Verified on HeadHunter",stats:"Mathematical statistics",
+  educationTitle:"Education & courses",education:"Education",courses:"Courses",edu1:"2024 – MIRBIS, MBA, Marketing Management",edu2:"2015 – State Pedagogical University – Accounting, Analysis and Audit",edu3:"2011 – State Technical University – Mechanical Engineering",course1:"2025 – Skillbox – Online Course Producer, from Zero to PRO",course2:"2022 – University of AI – Data Science, ML, Python (NumPy/Pandas/Matplotlib/Seaborn)",course3:"2017 – My Business Yugra – Social Entrepreneurship",
   toolkitTitle:"Working toolkit",toolkitIntro:"Environment and libraries for analysis, development and automation.",tool1Title:"Python & data",tool2Title:"Visualization & ML",tool2P:"Data exploration, visualization, statistics and models.",tool3Title:"Documents & integrations",tool3P:"Processing spreadsheets, PDFs, web data and APIs.",tool4Title:"AI & development",tool4P:"Tools for research, automation and working with models.",
-  aiWorkflow:"AI workflow",aiTitle:"Assistants, agents and AI-assisted development",aiP:"I use prompt engineering, RAG, MCP and agent harnesses — environments for running and validating AI agents. I use n8n and Ollama for automation and validate outputs before use.",aiModels:"Assistants & models",aiCode:"AI for coding",aiAgents:"Agents & integrations",aiAgentsList:"RAG · MCP · n8n · Ollama · AI agents and assistants",
-  contactTitle:"Shall we turn your data into better decisions?",contactText:"I can contribute to analytics, BI, DWH, Data Quality and process improvement. Open to Data Analyst, BI Analyst and Analytics Engineer roles.",telegram:"Message me on Telegram",email:"Send an email",detailsTitle:"Contact & additional information",detailsText:"Open to remote or hybrid work, as well as office-based roles in Moscow.",location:"Moscow, Russia",additional:"Additional information",citizenship:"Citizenship: Russian Federation",languages:"Languages: Russian — native, English — B1",workMode:"Hybrid / office",hhLink:"Resume on hh.ru ↗"
+  aiWorkflow:"AI workflow",aiTitle:"Assistants, agents and AI-assisted development",aiP:"I use prompt engineering, RAG, MCP and agent harnesses – environments for running and validating AI agents.",aiModels:"Assistants & models",aiCode:"AI for coding",aiAgents:"Agents & integrations",aiAgentsList:"RAG · MCP · n8n · Ollama · AI agents and assistants",
+  contactTitle:"Shall we turn your data into better decisions?",contactText:"I can contribute to analytics, BI, DWH, Data Quality and process improvement. Open to Data Analyst, BI Analyst and Analytics Engineer roles.",telegram:"Message me on Telegram",email:"Send an email",detailsTitle:"Contact & additional information",detailsText:"Open to remote or hybrid work, as well as office-based roles in Moscow.",location:"Moscow, Russia",additional:"Additional information",citizenship:"Citizenship: Russian Federation",languages:"Languages: Russian – native, English – B1",workMode:"Hybrid / office",hhLink:"Resume on hh.ru ↗"
 }
 };
 
