@@ -39,6 +39,7 @@ h1,h2,h3{font-family:"DM Serif Display",Georgia,serif;font-weight:400}
 a{color:inherit}
 button{font:inherit}
 .container{max-width:1100px;margin:0 auto;padding:0 20px;width:100%}
+.container-wide{max-width:1500px;margin:0 auto;padding:0 20px;width:100%}
 .skip-link{position:fixed;left:16px;top:-60px;z-index:3000;padding:10px 14px;background:var(--primary-dark);color:#fff;border-radius:8px;text-decoration:none;font-weight:700}
 .skip-link:focus-visible{top:16px;outline:3px solid var(--focus-ring);outline-offset:3px}
 :focus-visible{outline:3px solid var(--focus-ring);outline-offset:3px}
@@ -112,17 +113,17 @@ h1{font-size:4rem;line-height:1.08;margin-bottom:12px}
     overflow:hidden;
 }
 
-.portfolio-hub h3{
+.portfolio-hub h2{
     font-size:1.55rem;
     color:var(--primary-dark);
-    margin:0 0 4px;
+    margin:0 0 18px;
     line-height:1.15;
 }
 
 .portfolio-hub ul{
     list-style:none;
     display:grid;
-    gap:7px;
+    gap:13px;
     margin:0;
     padding:0;
 }
@@ -137,9 +138,6 @@ h1{font-size:4rem;line-height:1.08;margin-bottom:12px}
     line-height:1.45;
     white-space:nowrap;
 }
-.portfolio-hub h3{font-size:1.55rem;color:var(--primary-dark);margin-bottom:18px}
-.portfolio-hub ul{list-style:none;display:grid;gap:13px}
-.portfolio-hub li{position:relative;display:flex;align-items:baseline;gap:8px;padding-left:22px;font-size:1rem;line-height:1.45;white-space:nowrap}
 .portfolio-hub li>span,.portfolio-hub li>a{flex:0 0 auto;white-space:nowrap}
 .portfolio-hub li:before{content:"•";position:absolute;left:0;color:var(--primary);font-weight:900}
 .portfolio-hub a{color:var(--primary);font-weight:700;text-decoration:none;white-space:nowrap}
@@ -186,7 +184,8 @@ section{padding:72px 0}
 
 /* Projects/cases */
 .projects-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:24px}
-.project-card{padding:26px;transition:transform .2s ease,box-shadow .2s ease}
+.projects-grid-4{grid-template-columns:repeat(4,minmax(0,1fr));gap:16px}
+.project-card{padding:28px 24px;transition:transform .2s ease,box-shadow .2s ease}
 .project-card:hover{transform:translateY(-4px);box-shadow:0 18px 36px var(--shadow)}
 .project-card-featured{border-color:color-mix(in srgb,var(--primary) 40%,var(--border));box-shadow:0 12px 30px color-mix(in srgb,var(--primary) 8%,transparent)}
 .project-tag{display:inline-block;background:var(--primary-soft);color:var(--primary-dark);border-radius:999px;padding:6px 11px;font-size:.78rem;font-weight:800;margin-bottom:13px}
@@ -202,6 +201,7 @@ section{padding:72px 0}
 .project-link{display:inline-block;color:var(--primary-dark);font-weight:800;text-decoration:none;margin-top:11px}
 .project-link:hover{text-decoration:underline;text-underline-offset:4px}
 .project-proof{margin:12px 0 14px;padding:10px 12px;background:var(--primary-soft);border-left:3px solid var(--primary);color:var(--primary-dark);font-size:.82rem;font-weight:700}
+.project-proof span{display:block}
 .project-heading{display:flex;align-items:center;gap:14px;margin-bottom:16px}
 .project-mark{display:grid;place-items:center;flex:0 0 48px;width:48px;height:48px;border:1px solid var(--border);border-radius:8px;background:var(--primary-soft);color:var(--primary-dark);font-family:monospace;font-weight:800}
 .project-mark--trainer{background:#f4ece5;color:#80583f}
@@ -277,7 +277,8 @@ body.menu-open{overflow:hidden}
     gap:20px;
   }
 
-  .projects-grid{
+  .projects-grid,
+  .projects-grid-4{
     grid-template-columns:repeat(2,minmax(0,1fr));
   }
 }
@@ -296,7 +297,7 @@ body.menu-open{overflow:hidden}
   .hero-actions .btn,.hero-actions .text-link{text-align:center;width:100%}
   .evidence-grid{grid-template-columns:repeat(2,minmax(0,1fr))}
   .about-grid,.contact-wrap,.toolkit-grid,.ai-workflow{grid-template-columns:1fr}
-  .projects-grid{grid-template-columns:1fr}
+  .projects-grid,.projects-grid-4{grid-template-columns:1fr}
   .skills-grid{grid-template-columns:repeat(2,minmax(0,1fr))}
   .section-header{text-align:left}
   .section-header h2:after{margin-left:0}
@@ -323,7 +324,7 @@ body.menu-open{overflow:hidden}
     overflow:visible;
   }
 
-  .portfolio-hub h3{
+  .portfolio-hub h2{
     margin:0 0 10px;
     font-size:1.35rem;
     line-height:1.2;
@@ -342,6 +343,7 @@ body.menu-open{overflow:hidden}
 }
 @media(max-width:480px){
   .container{padding-left:16px;padding-right:16px}
+  .container-wide{padding-left:16px;padding-right:16px}
   h1{font-size:2.75rem}
   .subtitle{font-size:1.15rem}
   .summary{font-size:1rem}
@@ -367,7 +369,7 @@ body.menu-open{overflow:hidden}
   <div class="container topbar">
     <a class="brand" href="#top" data-i18n="brandName">АРТУР МИНИН</a>
     <div class="nav-right">
-      <nav class="site-nav" aria-label="Основная навигация">
+      <nav class="site-nav" aria-label="Основная навигация" data-i18n-aria-label="navLabel">
         <a href="#about" data-nav="about" data-i18n="navAbout">Обо мне</a>
         <a href="#cases" data-nav="cases" data-i18n="navCases">Кейсы</a>
         <a href="#projects" data-nav="projects" data-i18n="navProjects">Проекты</a>
@@ -377,8 +379,8 @@ body.menu-open{overflow:hidden}
       <a class="nav-resume" href="https://drive.google.com/file/d/1JkIpSLRhYlpFip-zRDEx1RoeUZy9_zMZ/view" target="_blank" rel="noopener noreferrer" data-i18n="resumeShort">Резюме ↗</a>
       <div class="nav-controls">
         <button class="control-btn" id="langToggle" type="button" aria-label="Switch language">EN</button>
-        <button class="control-btn" id="themeToggle" type="button" aria-label="Toggle theme">☾</button>
-        <button class="menu-toggle" id="menuToggle" type="button" aria-label="Open menu" aria-expanded="false">☰</button>
+        <button class="control-btn" id="themeToggle" type="button" aria-label="Включить тёмную тему">☾</button>
+        <button class="menu-toggle" id="menuToggle" type="button" aria-label="Мобильное меню" data-i18n-aria-label="menuToggleLabel" aria-expanded="false">☰</button>
       </div>
     </div>
   </div>
@@ -395,7 +397,7 @@ body.menu-open{overflow:hidden}
 <header class="hero-section" id="top">
   <div class="container hero">
     <div class="hero-copy">
-      <div class="eyebrow" data-i18n="role">Бизнес-аналитик · Аналитик данных · Analytics Engineer</div>
+      <div class="eyebrow" data-i18n="role">Бизнес-аналитик · Аналитик данных · Analytics Engineer · Process Mining</div>
       <h1 data-i18n="personName">Артур Минин</h1>
       <div class="subtitle" data-i18n="heroStack">Помогаю находить точки роста через данные, процессы и BI</div>
       <p class="summary" data-i18n="heroSummary">Аналитик данных на стыке аналитики, процессов и IT. Извлекаю, очищаю и анализирую данные, строю витрины и дашборды. Автоматизирую проверки и выстраиваю data-driven-подход с помощью SQL, Python, BI и Process Mining.</p>
@@ -411,7 +413,7 @@ body.menu-open{overflow:hidden}
       </div>
     </div>
     <div class="portfolio-hub">
-      <h3 data-i18n="featuredRepos">Избранные репозитории</h3>
+      <h2 data-i18n="featuredRepos">Избранные репозитории</h2>
       <ul>
         <li><span data-i18n="repoData">Data-проекты:</span> <a href="https://github.com/MartinMinart/data-portfolio" target="_blank" rel="noopener noreferrer">data-portfolio ↗</a></li>
         <li><span data-i18n="repoCloud">Облако:</span> <a href="https://github.com/MartinMinart/cloud-infrastructure-project" target="_blank" rel="noopener noreferrer">cloud-infrastructure-project ↗</a></li>
@@ -445,7 +447,7 @@ body.menu-open{overflow:hidden}
   </div>
 </section>
 
-<section class="evidence-strip" aria-label="Key results" data-i18n-aria-label="evidenceLabel">
+<section class="evidence-strip" aria-label="Ключевые результаты" data-i18n-aria-label="evidenceLabel">
   <div class="container">
     <div class="evidence-grid">
       <div><strong>500+</strong><span data-i18n="ev1">сотрудников в кейсе корпоративного портала</span></div>
@@ -600,17 +602,34 @@ body.menu-open{overflow:hidden}
 </section>
 
 <section id="projects" style="background:var(--card-bg)">
-  <div class="container">
+  <div class="container-wide">
     <div class="section-header">
       <h2 data-i18n="projectsTitle">Личные проекты</h2>
       <p data-i18n="projectsIntro">Практические проекты по аналитике данных, SQL, DWH, облачной инфраструктуре, контейнеризации и подготовке аналитиков.</p>
     </div>
-    <div class="projects-grid">
+    <div class="projects-grid projects-grid-4">
+
+      <article class="project-card project-card-featured">
+        <span class="project-tag" data-i18n="projPmTag">Process Mining и BI</span>
+        <h3 data-i18n="projPmTitle">Process Mining MVP: закупки и контрактация</h3>
+        <p data-i18n="projPmP">Демо Process Mining-платформы без Celonis: event log на 1,09 млн событий – 50 тыс. кейсов процесса закупок в горнодобыче – 25 активностей.</p>
+        <div class="project-proof" data-i18n="projPmProof">4 вкладки: Overview · Process Map · Bottlenecks · Variants</div>
+        <a class="project-link" data-i18n="projPmLink" href="https://martinminart.github.io/pm_mvp_contractin/" target="_blank" rel="noopener noreferrer">Открыть платформу ↗</a>
+      </article>
+
+      <article class="project-card project-card-featured">
+        <span class="project-tag" data-i18n="projBiTag">BI · Data Viz</span>
+        <h3 data-i18n="projBiTitle">Purchase Dashboard – дашборд закупок</h3>
+        <p data-i18n="projBiP">Статичный BI-дашборд по закупкам на JSON + Vanilla JS: KPI с трендом к прошлому периоду, фильтрами, экспорт в CSV и HTML-отчёт.</p>
+        <div class="project-proof"><span data-i18n="projBiProofStats">81 потребность · 33 закупки · 23 заказа</span><span data-i18n="projBiProofDataset">Синтетические данные · 6 месяцев</span></div>
+        <a class="project-link" data-i18n="projBiLink" href="https://martinminart.github.io/purchase-dashboard/" target="_blank" rel="noopener noreferrer">Открыть дашборд ↗</a>
+      </article>
 
       <article class="project-card">
         <span class="project-tag">Data Analytics · SQL · ETL</span>
         <h3>Data portfolio</h3>
-        <p data-i18n="proj1P">Практические проекты по EDA на Python, финтех-SQL, Airflow ETL и локальному BI-стеку.</p>
+        <p data-i18n="proj1P">Практические проекты по EDA на Python (Pandas), финтех-SQL, Airflow ETL и локальному BI-стеку (Metabase).</p>
+        <div class="project-proof">Python · SQL · Airflow · dbt · Metabase</div>
         <a class="project-link" href="https://github.com/MartinMinart/data-portfolio" target="_blank" rel="noopener noreferrer" data-i18n="openRepo">Открыть репозиторий ↗</a>
       </article>
 
@@ -626,6 +645,7 @@ body.menu-open{overflow:hidden}
         <span class="project-tag">Analytics Stack · Credit Risk</span>
         <h3>Docker experiments</h3>
         <p data-i18n="proj3P">Docker Compose-среда для практики SQL/dbt и аналитики кредитного риска: PostgreSQL, Airflow, Metabase, Grafana, Node-RED и Qdrant.</p>
+        <div class="project-proof">Docker · PostgreSQL · Airflow · dbt · Metabase</div>
         <a class="project-link" href="https://github.com/MartinMinart/docker-experiments" target="_blank" rel="noopener noreferrer" data-i18n="openRepo">Открыть репозиторий ↗</a>
       </article>
 
@@ -703,7 +723,7 @@ body.menu-open{overflow:hidden}
         <ul><li data-i18n="skill1C">1С ERP</li><li>SAP ERP</li><li data-i18n="skillMES">MES / АСУ ТП</li><li data-i18n="skillAudit">Аудит ИС</li></ul>
       </div>
 
-      <div class="verified-skills" aria-label="Skills verified on HeadHunter" data-i18n-aria-label="verifiedLabel">
+      <div class="verified-skills" aria-label="Навыки, подтверждённые на HeadHunter" data-i18n-aria-label="verifiedLabel">
         <strong data-i18n="verified">Подтверждено на HeadHunter</strong>
         <span class="chip">Python</span><span class="chip">SQL</span><span class="chip">Git</span><span class="chip">API</span><span class="chip">Docker</span><span class="chip" data-i18n="stats">Математическая статистика</span>
       </div>
@@ -810,12 +830,12 @@ body.menu-open{overflow:hidden}
 <script>
 const translations = {
   ru:{
-  brandName:"АРТУР МИНИН",personName:"Артур Минин",mobileNavLabel:"Мобильная навигация",evidenceLabel:"Ключевые результаты",verifiedLabel:"Подтверждённые навыки на HeadHunter",
+  brandName:"АРТУР МИНИН",personName:"Артур Минин",navLabel:"Основная навигация",mobileNavLabel:"Мобильная навигация",menuToggleLabel:"Мобильное меню",darkThemeLabel:"Включить тёмную тему",lightThemeLabel:"Включить светлую тему",evidenceLabel:"Ключевые результаты",verifiedLabel:"Подтверждённые навыки на HeadHunter",
   pageTitle:"Артур Минин | Data Analyst / Analytics Engineer",
   pageDescription:"Портфолио Артура Минина – Data Analyst / Analytics Engineer, SQL, Python, BI, DWH, Data Quality, Process Mining.",
   skip:"Перейти к содержимому",
   navAbout:"Обо мне",navCases:"Кейсы",navProjects:"Проекты",navSkills:"Стек",navContacts:"Контакты",resumeShort:"Резюме ↗",
-  role:"Бизнес-аналитик · Аналитик данных · Analytics Engineer",
+  role:"Бизнес-аналитик · Аналитик данных · Analytics Engineer · Process Mining",
   heroStack:"Помогаю находить точки роста через данные, процессы и BI",
   scroll:"scroll",
   heroSummary:"Аналитик данных на стыке аналитики, процессов и IT. Извлекаю, очищаю и анализирую данные, строю витрины и дашборды. Автоматизирую проверки и выстраиваю data-driven-подход с помощью SQL, Python, BI и Process Mining.",
@@ -840,7 +860,9 @@ const translations = {
   case4Title:"Автоматизация анализа логов",case4P:"Повторяемый анализ логов для нескольких систем вместо ручной многодневной проверки.",case4a:"Автоматизировано для 5+ систем",case4c:"SQL и Python/Pandas для обработки и проверки данных",case4Outcome:"Время анализа сократилось с нескольких дней до 3–4 часов",
   case5Tag:"Python · Pandas · Plotly.js",case5Title:"Аналитика пользовательской активности корпсервиса",case5P:"Интерактивный веб-дашборд для исследования активности пользователей.",case5a:"45 961 событие за 7 дней",case5b:"20 418 пользователей в агрегированной выборке",case5Outcome:"Рабочий интерактивный дашборд для анализа данных",case5Link:"Открыть дашборд ↗",
   projectsTitle:"Личные проекты",projectsIntro:"Практические проекты по аналитике данных, SQL, DWH, облачной инфраструктуре, контейнеризации и подготовке аналитиков.",
-  proj1P:"Практические проекты по EDA на Python, финтех-SQL, Airflow ETL и локальному BI-стеку.",proj2P:"Демо-платформа для розничной сети на синтетических данных (~10 000 заказов). PostgreSQL, Airflow и dbt подготавливают данные для аналитики в ClickHouse и Metabase; инфраструктура развёрнута на Cloud.ru.",proj3P:"Compose-стек для аналитики кредитного риска и практики SQL/dbt: PostgreSQL, Airflow, Metabase, Grafana, n8n, Node-RED и Qdrant.",openRepo:"Открыть репозиторий ↗",
+  projPmTag:"Process Mining и BI",projPmTitle:"MVP Process Mining: закупки и контрактация",projPmP:"Демо-платформа Process Mining без Celonis: журнал событий на 1,09 млн событий — 50 тыс. кейсов закупок в горнодобывающей отрасли — 25 активностей.",projPmProof:"4 вкладки: Обзор · Карта процесса · Узкие места · Варианты",projPmLink:"Открыть платформу ↗",
+  projBiTag:"BI · Визуализация данных",projBiTitle:"Purchase Dashboard — дашборд закупок",projBiP:"Статичный BI-дашборд по закупкам на JSON и Vanilla JS: KPI с динамикой к прошлому периоду, фильтры, экспорт в CSV и HTML-отчёт.",projBiProofStats:"81 потребность · 33 закупки · 23 заказа",projBiProofDataset:"Синтетические данные · 6 месяцев",projBiLink:"Открыть дашборд ↗",
+  proj1P:"Практические проекты по EDA на Python (Pandas), финтех-SQL, Airflow ETL и локальному BI-стеку (Metabase).",proj2P:"Демо-платформа для розничной сети на синтетических данных (~10 000 заказов). PostgreSQL, Airflow и dbt подготавливают данные для аналитики в ClickHouse и Metabase; инфраструктура развёрнута на Cloud.ru.",proj3P:"Compose-стек для аналитики кредитного риска и практики SQL/dbt: PostgreSQL, Airflow, Metabase, Grafana, n8n, Node-RED и Qdrant.",openRepo:"Открыть репозиторий ↗",
   sqlProof:"SQL-паттерны · Практические задания · Интервью",analystProof:"11 разделов · 63 темы · 710 вопросов",footer:"© 2026 Артур Минин · Бизнес-аналитик · Аналитик данных · Analytics Engineer",trainerTag:"Подготовка к собеседованию",sqlTrainerTitle:"SQL практикум",sqlTrainerP:"Теория, практика и симулятор собеседования по SQL. Работает в браузере без бэкенда.",openTrainer:"Открыть тренажёр ↗",analystTrainerTag:"Подготовка аналитиков",analystTrainerTitle:"Становись умнее",analystTrainerP:"710 вопросов по SQL, Python, DWH, Big Data, аналитике, инструментам и soft skills. Работает в браузере без сервера.",
   skillsTitle:"Ключевые навыки",skillData:"Data & Analytics",skillBI:"BI & Dashboards",skillDE:"Analytics Engineering",skillTools:"Tools & AI",skillBA:"Бизнес-анализ",skillBA1:"Сбор требований",skillBA2:"Интервью",skillBA5:"Технические задания",skillModel:"Моделирование",skillAnalystTools:"Инструменты аналитика",skillMethods:"Методологии",skillMethodSDD:"SDD – разработка на основе спецификаций",skillIndustrial:"Промышленные системы",skill1C:"1С ERP",skillMES:"MES / АСУ ТП",skillAudit:"Аудит ИС",verified:"Подтверждено на HeadHunter",stats:"Математическая статистика",
   educationTitle:"Образование и курсы",education:"Образование",courses:"Курсы",edu1:"2024 – МИРБИС, MBA, Маркетинг-менеджмент",edu2:"2015 – Государственный педагогический университет – Бухучёт, анализ и аудит",edu3:"2011 – Государственный технический университет – Инженер-механик",course1:"2025 – Skillbox – Продюсер онлайн-курсов с нуля до PRO",course2:"2022 – Университет ИИ – Data Science, ML, Python (NumPy/Pandas/Matplotlib/Seaborn)",course3:"2017 – Мой бизнес Югра – Социальное предпринимательство",
@@ -849,12 +871,12 @@ const translations = {
   contactTitle:"Обсудим, как превратить данные в результат?",contactText:"Готов подключиться к задачам аналитики, BI, DWH, Data Quality и оптимизации процессов. Открыт к позициям Data Analyst, BI Analyst и Analytics Engineer.",telegram:"Написать в Telegram",email:"Написать на email",detailsTitle:"Контакты и дополнительная информация",detailsText:"Готов к удалённой или гибридной работе, а также к офису в Москве.",location:"Москва, Россия",additional:"Дополнительно",citizenship:"Гражданство: РФ",languages:"Языки: русский – родной, английский – B1",workMode:"Готов к командировкам",hhLink:"Резюме на hh.ru ↗"
 },
 en:{
-  brandName:"ARTUR MININ",personName:"Artur Minin",mobileNavLabel:"Mobile navigation",evidenceLabel:"Key results",verifiedLabel:"Skills verified on HeadHunter",
+  brandName:"ARTUR MININ",personName:"Artur Minin",navLabel:"Main navigation",mobileNavLabel:"Mobile navigation",menuToggleLabel:"Mobile navigation menu",darkThemeLabel:"Enable dark theme",lightThemeLabel:"Enable light theme",evidenceLabel:"Key results",verifiedLabel:"Skills verified on HeadHunter",
   pageTitle:"Artur Minin | Data Analyst / Analytics Engineer",
   pageDescription:"Portfolio of Artur Minin – Data Analyst / Analytics Engineer, SQL, Python, BI, DWH, Data Quality, Process Mining.",
   skip:"Skip to content",
   navAbout:"About",navCases:"Cases",navProjects:"Projects",navSkills:"Stack",navContacts:"Contact",resumeShort:"Resume ↗",
-  role:"Business Analyst · Data Analyst · Analytics Engineer",
+  role:"Business Analyst · Data Analyst · Analytics Engineer · Process Mining",
   heroStack:"I help uncover growth opportunities through data, processes, and BI",
   scroll:"scroll",
   heroSummary:"Data analyst at the intersection of analytics, processes and IT. I extract, clean and analyze data, and build data marts and dashboards. I automate checks and build a data-driven approach using SQL, Python, BI and Process Mining.",
@@ -879,7 +901,8 @@ en:{
   case4Title:"Automated log analysis",case4P:"Repeatable log analysis for several systems instead of a manual multi-day review.",case4a:"Automated for 5+ systems",case4c:"SQL and Python/Pandas for data processing and validation",case4Outcome:"Analysis time fell from several days to 3–4 hours",
   case5Tag:"Python · Pandas · Plotly.js",case5Title:"Corporate Service User Activity Analytics",case5P:"Interactive web dashboard for exploring user activity.",case5a:"45,961 events over 7 days",case5b:"20,418 users in the aggregated dataset",case5Outcome:"Interactive dashboard for data analysis",case5Link:"Open dashboard ↗",
   projectsTitle:"Selected projects",projectsIntro:"Practical projects covering data analytics, SQL, DWH, cloud infrastructure, containerization and analyst training.",
-  proj1P:"Hands-on projects in Python EDA, fintech SQL, Airflow ETL, and local BI stacks.",proj2P:"Demo retail analytics platform built on synthetic data (~10,000 orders). PostgreSQL, Airflow and dbt prepare data for analytics in ClickHouse and Metabase; infrastructure is deployed on Cloud.ru.",proj3P:"A Docker Compose stack for credit-risk analytics and SQL/dbt practice, with PostgreSQL, Airflow, Metabase, Grafana, Node-RED, and Qdrant.",openRepo:"Open repository ↗",
+  projBiProofStats:"81 requirements · 33 purchases · 23 orders",projBiProofDataset:"Synthetic data · 6 months",
+  proj1P:"Hands-on projects in Python (Pandas) EDA, fintech SQL, Airflow ETL, and a local BI stack (Metabase).",proj2P:"Demo retail analytics platform built on synthetic data (~10,000 orders). PostgreSQL, Airflow and dbt prepare data for analytics in ClickHouse and Metabase; infrastructure is deployed on Cloud.ru.",proj3P:"A Docker Compose stack for credit-risk analytics and SQL/dbt practice, with PostgreSQL, Airflow, Metabase, Grafana, Node-RED, and Qdrant.",openRepo:"Open repository ↗",projPmTag:"Process Mining & BI",projPmTitle:"Process Mining MVP: Procurement & Contracting",projPmP:"Process Mining platform demo without Celonis: event log with 1.09M events – 50K procurement cases in mining – 25 activities.",projPmProof:"4 tabs: Overview · Process Map · Bottlenecks · Variants",projPmLink:"Open platform ↗",projBiTag:"BI · Data Viz",projBiTitle:"Purchase Dashboard – Procurement Dashboard",projBiP:"Static procurement BI dashboard built with JSON and Vanilla JS: period-over-period KPI trends, filters, CSV export, and an HTML report.",projBiLink:"Open dashboard ↗",
   sqlProof:"SQL patterns · Practice tasks · Interview",analystProof:"11 sections · 63 topics · 710 questions",footer:"© 2026 Artur Minin · Business Analyst · Data Analyst · Analytics Engineer",trainerTag:"Interview preparation",sqlTrainerTitle:"SQL Practice",sqlTrainerP:"SQL theory, practice tasks and an interview simulator. Runs in the browser without a backend.",openTrainer:"Open trainer ↗",analystTrainerTag:"Analyst training",analystTrainerTitle:"Get Smarter",analystTrainerP:"710 questions covering SQL, Python, DWH, Big Data, analytics, tools and soft skills. Runs in the browser without a server.",
   skillsTitle:"Key skills",skillData:"Data & Analytics",skillBI:"BI & Dashboards",skillDE:"Analytics Engineering",skillTools:"Tools & AI",skillBA:"Business Analysis",skillBA1:"Requirements gathering",skillBA2:"Interviews",skillBA5:"Technical specifications",skillModel:"Process modeling",skillAnalystTools:"Analyst tools",skillMethods:"Methodologies",skillMethodSDD:"SDD – Spec-Driven Development",skillIndustrial:"Enterprise systems",skill1C:"1C ERP",skillMES:"MES / ICS",skillAudit:"IS audit",verified:"Verified on HeadHunter",stats:"Mathematical statistics",
   educationTitle:"Education & courses",education:"Education",courses:"Courses",edu1:"2024 – MIRBIS, MBA, Marketing Management",edu2:"2015 – State Pedagogical University – Accounting, Analysis and Audit",edu3:"2011 – State Technical University – Mechanical Engineering",course1:"2025 – Skillbox – Online Course Producer, from Zero to PRO",course2:"2022 – University of AI – Data Science, ML, Python (NumPy/Pandas/Matplotlib/Seaborn)",course3:"2017 – My Business Yugra – Social Entrepreneurship",
@@ -891,12 +914,12 @@ en:{
 
 const langKey="portfolioLang";
 const themeKey="portfolioTheme";
-let currentLang=localStorage.getItem(langKey)||"ru";
+let currentLang=localStorage.getItem(langKey);
+if(!translations[currentLang]) currentLang="ru";
 let currentTheme=localStorage.getItem(themeKey);
-if(!currentTheme){
+if(currentTheme!=="light"&&currentTheme!=="dark"){
   currentTheme=window.matchMedia&&window.matchMedia("(prefers-color-scheme: dark)").matches?"dark":"light";
 }
-document.documentElement.dataset.theme=currentTheme;
 
 function applyLanguage(lang){
   currentLang=lang;
@@ -914,16 +937,17 @@ function applyLanguage(lang){
   });
   document.getElementById("langToggle").textContent=lang==="ru"?"EN":"RU";
   document.getElementById("langToggle").setAttribute("aria-label",lang==="ru"?"Switch to English":"Переключить на русский");
+  document.getElementById("themeToggle").setAttribute("aria-label",t[currentTheme==="dark"?"lightThemeLabel":"darkThemeLabel"]);
   localStorage.setItem(langKey,lang);
 }
 
-function applyTheme(theme){
+function applyTheme(theme,persist=true){
   currentTheme=theme;
   document.documentElement.dataset.theme=theme;
   const b=document.getElementById("themeToggle");
   b.textContent=theme==="dark"?"☀":"☾";
-  b.setAttribute("aria-label",theme==="dark"?"Switch to light theme":"Switch to dark theme");
-  localStorage.setItem(themeKey,theme);
+  b.setAttribute("aria-label",translations[currentLang][theme==="dark"?"lightThemeLabel":"darkThemeLabel"]);
+  if(persist) localStorage.setItem(themeKey,theme);
 }
 
 document.getElementById("langToggle").addEventListener("click",()=>applyLanguage(currentLang==="ru"?"en":"ru"));
@@ -936,11 +960,13 @@ experienceSection.before(document.getElementById("cases"),document.getElementByI
 menuToggle.addEventListener("click",()=>{
   const open=!mobileMenu.classList.contains("open");
   mobileMenu.classList.toggle("open",open);
+  document.body.classList.toggle("menu-open",open);
   menuToggle.setAttribute("aria-expanded",String(open));
   menuToggle.textContent=open?"×":"☰";
 });
 mobileMenu.querySelectorAll("a").forEach(a=>a.addEventListener("click",()=>{
   mobileMenu.classList.remove("open");
+  document.body.classList.remove("menu-open");
   menuToggle.setAttribute("aria-expanded","false");
   menuToggle.textContent="☰";
 }));
@@ -957,7 +983,7 @@ const observer=new IntersectionObserver(entries=>{
 sections.forEach(s=>observer.observe(s));
 
 applyLanguage(currentLang);
-applyTheme(currentTheme);
+applyTheme(currentTheme,false);
 </script>
 </body>
 </html>
